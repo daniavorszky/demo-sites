@@ -81,7 +81,7 @@ const address = site.address ?? contact?.address;
         if (!owner && !sessionStorage.getItem(key) && location.hostname.indexOf("digitalguild.agency") > -1) {
           sessionStorage.setItem(key, "1");
           setTimeout(function () { fetch("/api/view", { method: "POST", keepalive: true, headers: { "content-type": "application/json" },
-            body: JSON.stringify({ path: location.pathname, r: qs.get("r") || "", name: siteName }) }).catch(function () {}); }, 1500);
+            body: JSON.stringify({ path: location.pathname, r: qs.get("r") || "", name: siteName, silent: qs.get("via") === "propunere" }) }).catch(function () {}); }, 1500);
         }
       } catch (e) {} })();
     </script>

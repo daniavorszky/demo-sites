@@ -8,7 +8,7 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env, waitUnti
   const ua = request.headers.get("user-agent") || "";
   if (!ua || BOTS.test(ua)) return new Response(null, { status: 204 });
 
-  let body: { path?: string; r?: string; name?: string } = {};
+  let body: { path?: string; r?: string; name?: string; silent?: boolean } = {};
   try { body = await request.json(); } catch { return new Response(null, { status: 400 }); }
 
   const path = String(body.path || "").slice(0, 120);
@@ -43,7 +43,8 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env, waitUnti
   const cale = (env.PANOU_CALE || "").replace(/^https?:\/\/[^/]+/, "").replace(/^\/+|\/+$/g, "").split("/").pop() || "";
   const panou = cale ? ` · <https://propuneri.digitalguild.agency/${cale}/|Panou deschideri>` : "";
   const text = `*Demo ${client}* a fost deschis${who ? ` de *${who}*` : ""}\n${time} · ${place} · ${device(ua)}\n<${url}?eu=1|${url}>${panou}`;
-  if (env.SLACK_WEBHOOK_URL) {
+  // Deschis din landing-ul de propunere (?via=propunere): se numără în panou, dar fără Slack — notificarea a venit deja de la landing.
+  if (env.SLACK_WEBHOOK_URL && !body.silent) {
     waitUntil(fetch(env.SLACK_WEBHOOK_URL, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ text }) }).catch(() => {}));
   }
   return new Response(null, { status: 204 });

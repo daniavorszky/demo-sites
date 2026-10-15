@@ -13,7 +13,7 @@ if (!slug) { console.error("Folosire: node tools/landing.mjs <slug>"); process.e
 const c = JSON.parse(readFileSync(`clients/${slug}/client.json`, "utf8"));
 const agency = JSON.parse(readFileSync("agency.json", "utf8"));
 const L = c.landing || {};
-const newUrl = L.newUrl || `/${L.newPath || slug}/`;
+const newUrl = (L.newUrl || `/${L.newPath || slug}/`) + "?via=propunere";
 const company = c.company || slug;
 const title = L.title || `Site-ul ${company}, regândit`;
 const intro = L.intro || "Același conținut, un design nou.";
@@ -132,6 +132,10 @@ footer{border-top:1px solid var(--rule);padding:22px 0 40px;color:var(--ink-soft
 
   <footer>Propunere pregătită de <a href="${esc(agency.url)}" style="color:inherit">${esc(agency.name)}</a> pentru ${esc(company)}${c.contact ? ` · în atenția ${esc(c.contact)}` : ""}. Pagină privată, neindexată.</footer>
 </div>
+<script>
+(function(){try{var r=new URLSearchParams(location.search).get("r");if(!r)return;
+document.querySelectorAll('a[href*="via=propunere"]').forEach(function(a){a.href=a.href+"&r="+encodeURIComponent(r)})}catch(e){}})();
+</script>
 </body>
 </html>
 `;

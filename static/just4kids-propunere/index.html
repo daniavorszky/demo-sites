@@ -68,11 +68,11 @@ footer{border-top:1px solid var(--rule);padding:22px 0 40px;color:var(--ink-soft
     <div class="kicker">Propunere de design</div>
     <h1>Site-ul Just4Kids, <em>regândit</em></h1>
     <p>Același conținut, un design nou.</p>
-    <a class="shot" href="/just4kids-editorial/" target="_blank" rel="noopener" aria-label="Deschide propunerea">
+    <a class="shot" href="/just4kids-editorial/?via=propunere" target="_blank" rel="noopener" aria-label="Deschide propunerea">
       <div class="chrome"><span></span><span></span><span></span><em>just4kids.ro</em></div>
       <img src="after-fold.jpg" alt="Propunerea Digital Guild pentru Just4Kids">
     </a>
-    <p class="hint"><a href="/just4kids-editorial/" target="_blank" rel="noopener">Vezi propunerea completă ↗</a></p>
+    <p class="hint"><a href="/just4kids-editorial/?via=propunere" target="_blank" rel="noopener">Vezi propunerea completă ↗</a></p>
   </section>
 
   <section class="cols">
@@ -86,7 +86,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 40px;color:var(--ink-soft
       <h2>Propunerea noastră</h2>
       <p class="sub">Același conținut, prezentat altfel</p>
       <div class="frame"><img src="after-full.jpg" alt="Pagina întreagă a propunerii" loading="lazy"></div>
-      <a class="btn primary" href="/just4kids-editorial/" target="_blank" rel="noopener">Deschide propunerea ↗</a>
+      <a class="btn primary" href="/just4kids-editorial/?via=propunere" target="_blank" rel="noopener">Deschide propunerea ↗</a>
     </div>
   </section>
 
@@ -101,5 +101,9 @@ footer{border-top:1px solid var(--rule);padding:22px 0 40px;color:var(--ink-soft
 
   <footer>Propunere pregătită de <a href="https://digitalguild.agency" style="color:inherit">Digital Guild</a> pentru Just4Kids · în atenția Florin. Pagină privată, neindexată.</footer>
 </div>
+<script>
+(function(){try{var r=new URLSearchParams(location.search).get("r");if(!r)return;
+document.querySelectorAll('a[href*="via=propunere"]').forEach(function(a){a.href=a.href+"&r="+encodeURIComponent(r)})}catch(e){}})();
+</script>
 </body>
 </html>
