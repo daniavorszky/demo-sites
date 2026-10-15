@@ -117,7 +117,7 @@ partea pe care o înlocuiești cu `home.json`.
 - **Landing** (`/<slug>-propunere/`): captura above-the-fold a propunerii, coloane, CTA WhatsApp/telefon (din `agency.json`).
   `npm run shots -- <slug> <urlActual> <urlPropunere>` → `npm run landing -- <slug>`. Linkurile din landing au `?via=propunere`
   (deschiderea demo-ului de acolo se numără în panou, dar fără Slack).
-- **Variante de design**: în `clients/<slug>/client.json` pui `"variante": true` → build-ul publică același conținut în toate
+- **Variante de design**: active implicit pentru clienții creați cu `npm run new-client` (`"variante": true` în `client.json`; pune `false` ca să le oprești) → build-ul publică același conținut în toate
   skin-urile la `/_v/<slug>/` (pagină de comparație; `/_v/` nu se numără în panou).
 - **Nu-ți place designul?** `npm run reskin -- <slug> <editorial|calm|bold|warm> --push` → schimbă skin-ul demo-ului din landing,
   refă captura, regenerează landingul, publică. Conținutul nu se atinge. Link-ul trimis clientului rămâne același.
