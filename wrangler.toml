@@ -10,3 +10,4 @@ binding = "DESCHIDERI"
 id = "b7bbecd0c39e4526a978ade23fd0f1ee"
 
 # Secret (dashboard → Workers & Pages → demo-sites → Settings → Variables and Secrets): SLACK_WEBHOOK_URL (același ca la dga-propuneri).
+# ATENȚIE: trebuie adăugat ca tip *Secret*, nu *Text*. Când există wrangler.toml, variabilele Text din dashboard sunt șterse la fiecare deploy; secretele rămân.

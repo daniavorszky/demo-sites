@@ -62,6 +62,8 @@ node tools/use.mjs clients/just4kids/home.json && npm run dev
 4. După primul deploy: Custom domains → `demo.digitalguild.agency` (Cloudflare adaugă CNAME-ul singur dacă domeniul e în cont).
 5. Opțional, ca demo-urile să nu fie accesibile oricui: Settings → **Access policy** (Cloudflare Access, gratuit până la 50 de utilizatori) sau lasă-le publice, dar neindexate (`robots.txt` + `X-Robots-Tag` sunt deja setate).
 
+**Monitorizare deschideri:** fiecare demo trimite un beacon la `/api/view` (`functions/api/view.ts`), care numără în KV-ul partajat cu `dga-propuneri` (chei `demo:<slug>`) și anunță pe Slack. Panoul e cel din dga-propuneri. Secretul `SLACK_WEBHOOK_URL` se pune în dashboard ca tip **Secret** (nu Text: cu `wrangler.toml` în repo, variabilele Text sunt șterse la fiecare deploy). Testează cu `?eu=0&r=Test`; `?eu=1` marchează browserul tău ca ignorat.
+
 Fiecare `git push` pe `main` republică tot. Un demo vechi se scoate ștergând folderul lui din `clients/`.
 
 ## Regulile (le respectă și promptul, și validatorul)
