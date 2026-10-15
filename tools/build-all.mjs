@@ -76,8 +76,8 @@ for (const slug of slugs.length ? readdirSync("clients").filter((d) => existsSyn
     buildOne(h, client, join("dist", "_v", slug, skin), `/_v/${slug}/${skin}/`);
   }
   const cards = names.map((skin) => `<figure class="${skin === current ? "on" : ""}">
-  <figcaption><strong>${skin}</strong>${skin === current ? " <span>· folosit acum</span>" : ""}<a href="/_v/${slug}/${skin}/" target="_blank">deschide ↗</a></figcaption>
-  <div class="frame"><iframe src="/_v/${slug}/${skin}/" loading="lazy" tabindex="-1" title="${skin}"></iframe></div>
+  <figcaption><strong>${skin}</strong>${skin === current ? " <span>· folosit acum</span>" : ""}<a href="/_v/${slug}/${skin}/" target="_blank" rel="noopener">deschide ↗</a></figcaption>
+  <a class="frame" href="/_v/${slug}/${skin}/" target="_blank" rel="noopener" aria-label="Deschide varianta ${skin} într-un tab nou"><iframe src="/_v/${slug}/${skin}/" loading="lazy" tabindex="-1" title="${skin}"></iframe></a>
   <code>npm run reskin -- ${slug} ${skin}</code>
 </figure>`).join("\n");
   writeFileSync(join("dist", "_v", slug, "index.html"), `<!doctype html><html lang="ro"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Variante ${client.company || slug}</title>
@@ -85,7 +85,7 @@ for (const slug of slugs.length ? readdirSync("clients").filter((d) => existsSyn
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(560px,1fr));gap:24px}
 figure{margin:0;background:#fff;border:2px solid #e2ded6;border-radius:14px;padding:14px}figure.on{border-color:#2f6b4f}
 figcaption{display:flex;gap:8px;align-items:baseline;margin-bottom:10px;font-size:16px}figcaption span{color:#2f6b4f;font-size:13px}figcaption a{margin-left:auto;font-size:14px}
-.frame{width:100%;aspect-ratio:1280/800;overflow:hidden;border-radius:8px;border:1px solid #e2ded6;position:relative}
+.frame{display:block;width:100%;aspect-ratio:1280/800;overflow:hidden;border-radius:8px;border:1px solid #e2ded6;position:relative;cursor:pointer}.frame:hover{border-color:#2f6b4f}
 .frame iframe{width:1280px;height:800px;border:0;transform-origin:0 0;position:absolute;inset:0;pointer-events:none}
 code{display:block;margin-top:10px;font-size:13px;color:#555;background:#f4f2ee;padding:6px 8px;border-radius:6px}</style></head>
 <body><h1>Variante de design — ${client.company || slug}</h1><p>Același conținut, verificat, în fiecare variantă de design (culori + așezare). Alege una și rulează comanda de sub ea (sau spune-i lui Claude).</p>
@@ -102,8 +102,8 @@ const rows = all.map((slug) => {
   const label = b ? `${b.name} <span style="color:#777">· ${b.source ?? ""} · ${b.date ?? ""}</span>` : slug;
   const r = b && slug.endsWith("-propunere") ? refTag(b.contact, b.company) : "";
   const share = r ? ` <br><small>link de trimis: <code>https://demo.digitalguild.agency/${slug}/?r=${r}</code></small>` : "";
-  const v = variante.includes(slug) ? ` · <a href="/_v/${slug}/?eu=1">variante de design</a>` : "";
-  return `<li><a href="/${slug}/?eu=1">${slug}</a> — ${label}${v}${share}</li>`;
+  const v = variante.includes(slug) ? ` · <a href="/_v/${slug}/?eu=1" target="_blank" rel="noopener">variante de design</a>` : "";
+  return `<li><a href="/${slug}/?eu=1" target="_blank" rel="noopener">${slug}</a> — ${label}${v}${share}</li>`;
 }).join("\n");
 writeFileSync("dist/index.html", `<!doctype html><html lang="ro"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Demo sites</title><style>body{font:16px/1.6 system-ui;max-width:720px;margin:48px auto;padding:0 20px;color:#222}li{margin:8px 0}</style></head><body><h1>Demo-uri de homepage</h1><ul>${rows}</ul></body></html>`);
 writeFileSync("dist/robots.txt", "User-agent: *\nDisallow: /\n");
