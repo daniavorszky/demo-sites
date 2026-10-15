@@ -1,7 +1,7 @@
 {
   "source": {
     "url": "https://davino.ro/",
-    "extractedAt": "2026-10-15T13:23:07.967Z",
+    "extractedAt": "2026-10-15T13:26:13.275Z",
     "blocks": 0
   },
   "site": {
@@ -116,6 +116,834 @@
       "src": "https://davino.ro/assets/images/background-menu.jpg",
       "kind": "background",
       "near": ""
+    }
+  ],
+  "pages": [
+    {
+      "url": "https://davino.ro/",
+      "title": "Acasa | Davino",
+      "blocks": [
+        {
+          "kind": "h1",
+          "text": "Prin vin, natura inscrie\nmemoria unui an de intamplari.",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Evenimente subtile si trecatoare pentru unii: vant, ploaie, soare. Conditii esentiale pentru cei care au stiinta de a le valorifica intr-un vin special: deopotriva creatie si straduinta unui act de auto-depasire, reluat an de an.",
+          "inNav": false
+        },
+        {
+          "kind": "img",
+          "src": "https://davino.ro/assets/images/logo-davino.png",
+          "alt": "Davino Logo",
+          "width": 391,
+          "height": 87
+        },
+        {
+          "kind": "h2",
+          "text": "Drumul vinului catre perfectiune.",
+          "inNav": false
+        },
+        {
+          "kind": "li",
+          "text": "INTRA IN WEBSITE",
+          "inNav": true
+        },
+        {
+          "kind": "li",
+          "text": "ENGLISH VERSION",
+          "inNav": true
+        },
+        {
+          "kind": "p",
+          "text": "2020 Davino. All rights reserved | Web famous by eJump.",
+          "inNav": false
+        }
+      ]
+    },
+    {
+      "url": "https://davino.ro/vinul",
+      "title": "Vinul | Davino",
+      "blocks": [
+        {
+          "kind": "img",
+          "src": "https://davino.ro/assets/images/gen_vast_alb.png",
+          "alt": "",
+          "width": 841,
+          "height": 1983
+        },
+        {
+          "kind": "img",
+          "src": "https://davino.ro/assets/images/gen_vast_rosu.png",
+          "alt": "",
+          "width": 841,
+          "height": 1983
+        },
+        {
+          "kind": "img",
+          "src": "https://davino.ro/assets/images/gen_vast_rose.png",
+          "alt": "",
+          "width": 841,
+          "height": 1983
+        },
+        {
+          "kind": "img",
+          "src": "https://davino.ro/assets/images/Faurar_Alb_Nou1.png",
+          "alt": "",
+          "width": 841,
+          "height": 1983
+        },
+        {
+          "kind": "img",
+          "src": "https://davino.ro/assets/images/Faurar_Rosu_Nou1.png",
+          "alt": "",
+          "width": 841,
+          "height": 1983
+        },
+        {
+          "kind": "img",
+          "src": "https://davino.ro/assets/images/Faurar_Rose_Nou1.png",
+          "alt": "",
+          "width": 841,
+          "height": 1983
+        },
+        {
+          "kind": "img",
+          "src": "https://davino.ro/assets/images/alba_gen.png",
+          "alt": "",
+          "width": 841,
+          "height": 1983
+        },
+        {
+          "kind": "img",
+          "src": "https://davino.ro/assets/images/gen_purpura.png",
+          "alt": "",
+          "width": 473,
+          "height": 1952
+        },
+        {
+          "kind": "img",
+          "src": "https://davino.ro/assets/images/logo-davino.png",
+          "alt": "Davino Logo",
+          "width": 391,
+          "height": 87
+        },
+        {
+          "kind": "h2",
+          "text": "Drumul vinului catre perfectiune.",
+          "inNav": false
+        },
+        {
+          "kind": "li",
+          "text": "INTRA IN WEBSITE",
+          "inNav": true
+        },
+        {
+          "kind": "li",
+          "text": "ENGLISH VERSION",
+          "inNav": true
+        },
+        {
+          "kind": "p",
+          "text": "2020 Davino. All rights reserved | Web famous by eJump.",
+          "inNav": false
+        }
+      ],
+      "images": [
+        {
+          "src": "https://davino.ro/assets/images/acasa-bkg.jpg",
+          "width": 560,
+          "height": 422,
+          "alt": "Acasa Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/vinul-bkg.jpg",
+          "width": 560,
+          "height": 420,
+          "alt": "Vinul Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/terroir-bkg.jpg",
+          "width": 560,
+          "height": 422,
+          "alt": "Terroir Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/experienta-bkg.jpg",
+          "width": 560,
+          "height": 422,
+          "alt": "Experienta Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/news-bkg.jpg",
+          "width": 563,
+          "height": 422,
+          "alt": "News Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/contact-bkg.jpg",
+          "width": 560,
+          "height": 422,
+          "alt": "Contact Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/gen_vast_alb.png",
+          "width": 841,
+          "height": 1983,
+          "alt": "",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/gen_vast_rosu.png",
+          "width": 841,
+          "height": 1983,
+          "alt": "",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/gen_vast_rose.png",
+          "width": 841,
+          "height": 1983,
+          "alt": "",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/Faurar_Alb_Nou1.png",
+          "width": 841,
+          "height": 1983,
+          "alt": "",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/Faurar_Rosu_Nou1.png",
+          "width": 841,
+          "height": 1983,
+          "alt": "",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/Faurar_Rose_Nou1.png",
+          "width": 841,
+          "height": 1983,
+          "alt": "",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/alba_gen.png",
+          "width": 841,
+          "height": 1983,
+          "alt": "",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/gen_purpura.png",
+          "width": 473,
+          "height": 1952,
+          "alt": "",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/logo-davino.png",
+          "width": 391,
+          "height": 87,
+          "alt": "Davino Logo",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/vin-bkgr-v2-new.jpg",
+          "kind": "background",
+          "near": "VINURI\nFLAMBOYANT\nCabernet Sauvignon, Merlot & Feteasca Neagra\nDESCOPERA\nDOMAINE"
+        },
+        {
+          "src": "https://davino.ro/assets/images/background-menu.jpg",
+          "kind": "background",
+          "near": ""
+        }
+      ]
+    },
+    {
+      "url": "https://davino.ro/terroir",
+      "title": "Terroir | Davino",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "SOL",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Folosind tehnica culturala simplificata, eliminam pe cat posibil interventiile mecanice invazive asupra solului, reducand atat consumul de combustibil cat si amprenta de carbon.",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Pe dealurile dinspre vest, solul aprovizionat in argile cu continut ridicat de oxizi de fier este propice soiurilor de vinuri rosii. Pe dealurile dinspre est, avem o structura usoara de formatiune calcaroasa sarmatice care favorizeaza obtinerea vinurilor aromate. Solurile noastre au grad mare de eterogenitate.",
+          "inNav": false
+        },
+        {
+          "kind": "img",
+          "src": "https://davino.ro/assets/images/sol-image.jpg",
+          "alt": "",
+          "width": 850,
+          "height": 512
+        },
+        {
+          "kind": "h2",
+          "text": "CLIMA",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Climatul este unul temperat continental cu ierni reci si veri calde. Excesele continentului est-european atenuate datorita protectiei dealurilor subcarpatice in fata curentilor reci si prin patrunderea de mase de aer cald de origine mediteranean dinspre S, S-V de-a lungul Subcarpatilor.",
+          "inNav": false
+        },
+        {
+          "kind": "img",
+          "src": "https://davino.ro/assets/images/clima-image.jpg",
+          "alt": "",
+          "width": 850,
+          "height": 512
+        },
+        {
+          "kind": "h2",
+          "text": "PRECIPITATII",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Zona este caracterizata de valori heliotermice exceptionale pentru cultura vitei de vie: radiatie solara globala de peste 120-130 Kcal/cm2, insolatie ~ 2150-2200 ore si o suma a temperaturilor medii zilnice(mai mari de 0°C) de peste 4.000 grd. Temperatura medie anuala este de cca 10,6°C. Precipitatii cca. 600 mm medie anuala.",
+          "inNav": false
+        },
+        {
+          "kind": "img",
+          "src": "https://davino.ro/assets/images/precipitatii-image.jpg",
+          "alt": "",
+          "width": 850,
+          "height": 512
+        },
+        {
+          "kind": "h2",
+          "text": "OAMENII",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Oamenii locului traiesc prin viile lor. Sunt oameni inzestrati cu virtutea muncii, meritul rabdarii si pasiunea pentru vin.Cu acesti oameni iscusiti si blanzi mostenitori ai geniului locului, Davino pleaca an de an in lungul drum al vinului catre perfectiune.",
+          "inNav": false
+        },
+        {
+          "kind": "img",
+          "src": "https://davino.ro/assets/images/oamenii-image.jpg",
+          "alt": "",
+          "width": 850,
+          "height": 512
+        },
+        {
+          "kind": "img",
+          "src": "https://davino.ro/assets/images/logo-davino.png",
+          "alt": "Davino Logo",
+          "width": 391,
+          "height": 87
+        },
+        {
+          "kind": "h2",
+          "text": "Drumul vinului catre perfectiune.",
+          "inNav": false
+        },
+        {
+          "kind": "li",
+          "text": "INTRA IN WEBSITE",
+          "inNav": true
+        },
+        {
+          "kind": "li",
+          "text": "ENGLISH VERSION",
+          "inNav": true
+        },
+        {
+          "kind": "p",
+          "text": "2020 Davino. All rights reserved | Web famous by eJump.",
+          "inNav": false
+        }
+      ],
+      "images": [
+        {
+          "src": "https://davino.ro/assets/images/acasa-bkg.jpg",
+          "width": 560,
+          "height": 422,
+          "alt": "Acasa Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/vinul-bkg.jpg",
+          "width": 560,
+          "height": 420,
+          "alt": "Vinul Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/terroir-bkg.jpg",
+          "width": 560,
+          "height": 422,
+          "alt": "Terroir Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/experienta-bkg.jpg",
+          "width": 560,
+          "height": 422,
+          "alt": "Experienta Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/news-bkg.jpg",
+          "width": 563,
+          "height": 422,
+          "alt": "News Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/contact-bkg.jpg",
+          "width": 560,
+          "height": 422,
+          "alt": "Contact Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/sol-image.jpg",
+          "width": 850,
+          "height": 512,
+          "alt": "",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/clima-image.jpg",
+          "width": 850,
+          "height": 512,
+          "alt": "",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/precipitatii-image.jpg",
+          "width": 850,
+          "height": 512,
+          "alt": "",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/oamenii-image.jpg",
+          "width": 850,
+          "height": 512,
+          "alt": "",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/logo-davino.png",
+          "width": 391,
+          "height": 87,
+          "alt": "Davino Logo",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/background-menu.jpg",
+          "kind": "background",
+          "near": ""
+        }
+      ]
+    },
+    {
+      "url": "https://davino.ro/experienta",
+      "title": "Experienta | Davino",
+      "blocks": [
+        {
+          "kind": "img",
+          "src": "https://davino.ro/assets/images/logo-env.png",
+          "alt": "",
+          "width": 303,
+          "height": 303
+        },
+        {
+          "kind": "h1",
+          "text": "EXPERIENTA",
+          "inNav": false
+        },
+        {
+          "kind": "h2",
+          "text": "Lucrarile Solului",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Cand incepem sa lucram pamantul pe care cresc vitele noastre de vie, pastram metode de lucru traditionale folosind mijloace moderne, cu o eficienta in continua crestere, cum ar fi reconsiderarea florei salbatice clasificate de viticultura clasica drept \"buruieni\" prin integrarea in echilibrul biologic al plantatiilor si intoarcerea la practici cat mai respectuoase pentru mediu incluzand aici reintoarcerea la tractiunea animala sau aratul de mai multe ori pe an.",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Aratul frecvent ajuta la controlarea dezvoltarii buruienilor si aerarea solului, fenomen ce favorizeaza dezvoltarea microbiologica, importanta in echilibrul micro-climatului din fiecare parcela, si in acelasi timp limiteaza si evaporarea apei, cruciala in perioadele indelungate de seceta.",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Solurile dificile si sarace au reputatia de a fi ideale pentru o producție calitativa. Totusi, este necesar sa evitam situatiile in care substantele organice din sol ajung la un nivel foarte scazut pentru a nu slabi excesiv vita de vie.",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Din acest motiv folosim ingrasamant natural, gunoi de grajd, care aduce o cantitate insemnata de nutrienti in sol si in acelasi timp ajuta si la retinerea apei.",
+          "inNav": false
+        },
+        {
+          "kind": "h2",
+          "text": "Taierea",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Taierea este esentiala pentru calitatea productiei si pentru longevitatea plantatiilor. O taiere superficiala poate duce la o recolta prea bogata care nu a atins punctul optim de maturare al strugurilor, iar o taiere excesiva poate face ca vita de vie sa se intareasca prea mult, incurajand astfel cresterea excesiva in detrimentul maturarii strugurilor. Fiind influentata nu doar de fiecare parcela de vie, dar si de fiecare soi de strugure in parte, taierea necesita atingerea unui echilibru care nu poate fi cunoscut decat dupa multi ani de experienta.",
+          "inNav": false
+        },
+        {
+          "kind": "h2",
+          "text": "Lucrari Primavara",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Primavara ne concentram pe activitati care sa asigure conditii optime pentru dezvoltarea si maturarea strugurilor.\nPlivitul, care presupune indepartarea partiala a mugurilor de pe tulipini ajuta la evitarea unei cresteri vegetative excesive, care ar limita expunerea viitorilor ciorchini de struguri la soare si in acelasi timp ar ingreuna dirijarea nutrientilor produsi de frunzele de vita de vie catre struguri.Prin dirijarea lastarilor optimizam suprafata frunzelor expuse la soare, si limitam incurcarea frunzelor, care creaza\nun mediu propice de dezvoltare a afectiunilor fungice.",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Prin copilit (eliminarea lastarilor mici) diminuam riscurile de imbolnavire ale vitei de vie si incepem sa orientam plantele spre o productie calitativa si nu una cantitativa. Taierea varfurilor ajuta sa expunem cat mai multi ciorchini la soare, si in acelasi timp creaza spatii necesare pentru curentii de aer care usuca via in urma perioadelor de ploaie, limitand astfel riscul de aparitie al mucegaiului si al altor boli specifice.",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Obtinerea unor struguri cu un grad excelent de maturare presupune un control aproape perfect al conditiilor fito-sanitare din vie.Datorita progreselor stiintifice in aceasta zona, toate bolile fungice sunt in acest moment tinute sub control folosind exclusiv substante organice, iar datorita practicilor de taiere si plantare adoptate de noi, care asigura o buna spatiere a plantelor, am reusitam sa micsoram riscul de aparitie al mucegaiurilor.De-a lungul timpului am reusit sa obtinem un echilibru biologic intre plantele noastre si celelalte organisme din vie - paraziti si insecte, astfel incat acum ne bucuram de un mediu in care aceste populatii coexista si se autoregleaza. Suntem mandri ca am ajuns la nivelul la care nu folosim nicio substanta sistemica in plantatia noastra.",
+          "inNav": false
+        },
+        {
+          "kind": "h2",
+          "text": "Normare si Cules in Verde",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Normarea productiei este un factor cheie care afecteaza calitatea strugurilor si implicit a vinului obtinut. O productie prea mare la hectar nu va atinge niciodata un grad de maturare excelent pentru ca vita de vie nu poate hrani la maxim fiecare strugure. Desi in Romania nu exista reglementari legale pentru normarea productiei noi am hotarat sa implementam acest sistem, sacrificand o productie mai mare pentru una de o calitate incontestabila",
+          "inNav": false
+        },
+        {
+          "kind": "h2",
+          "text": "Cules",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Inainte sa incepem culesul efectiv, trebuie mai intai sa anlizam fiecare soi si fiecare parcela in parte, sa verificam nivelulurile de zahar si aciditate din struguri, sa simtim pulpa si taninurile, si de multe ori sa ne asumam riscul norilor care se plimba deasupra noastra pentru a lasa strugurii sa atinga acea perfectiune pe care ne-o dorim in crama.",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Culegem intotdeauna cu oameni ai locului, marea lor majoritate revenind in fiecare an, bucurandu-ne de cunostintele lor si de capacitatea de a face inca o sortare a strugurilor chiar pe randurile de vita de vie. Incepem intotdeauna cu Feteasca Alba, urmata de Riesling Italico si Sauvignon Blanc, de obicei de la sfarsit de august pana la sfarsit de septembrie. Continuam cu Feteasca Neagra, Merlot, iar la sfarsit intotdeauna Cabernet Sauvignon, din vite venerabile cu varste de peste 60 de ani, la sfarsitul lui octombrie, uneori chiar si la inceputul lunii Noiembrie.",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Culegerea se face manual si doar noaptea pentru a elimina eventualul stres al strugurilor\nprovacat de diferentele de temperatura",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Odata ajunsi in crama, strugurii sunt supusi unei a treia verificari calitative, acestia fiind sortati de o instalatie profesionala, cea mai moderna la acest nivel din cele cu interventie umana, unde ne asiguram ca doar acele boabe perfecte ajung in tancuri si in presa.",
+          "inNav": false
+        },
+        {
+          "kind": "h2",
+          "text": "Fermentare, Maturare si Imbuteliere",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Ulterior sortarii, strugurii o iau pe drumuri diferite, in functie de tipul vinului pe care vrem sa il obtinem, acestia intrand intr-un proces de fermentare cu flux menajat, gravitational. Soiurile pentri vinuri albe ajung direct in presa, mustul obtinut fiind ulterior supus fenomenului de deburbare. Soiurile pentru vinuri rosii ajung direct in tancuri de inox, unde sub forta gravitationala se scurge ravacul - singurul must din care obtinem vinurile rosii Davino. Fermentatia alcoolica are loc la temperaturi strict controlate, in vase de inox sau vase de lemn, care ne permit sa vinificam fiecare soi si fiecare parcela separat. Pentru vinurile rosii, fermentatia malolactica are loc imediat dupa cea alcoolica, intotdeaua in barrique. Pentru vinurile albe Davino, 50% dintre vinuri, in acest moment, sunt fermentate in lemn, urmand ca in maxim 3 ani, integral acestea sa fie fermentate in acest mod.",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Vasele de lemn folosite sunt 100% din stejar Romanesc, in proportie de 90% acestea fiind barrique-uri de 225L. Anii de experienta ne-au invatat sa folosim diferite tipuri de lemn si diferite tipuri de ardere pentru fiecare vin in parte, pentru a obtine o calitate a vinului la cel mai inalt nivel, si un profil aromatic care sa scoata in evidenta terroir-ul din Ceptura.",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Ulterior vinurile sunt imbuteliate folosind o linie proprie de ultima generatie, in conditii stricte care sa asigure un impact minim asupra vinului, dar care sa si intruneasca cele mai inalte standarde de calitate si siguranta. Dupa ce au fost inchise, intotdeauna cu dopuri naturale din pluta, buteliile Davino incep procesul de maturare la sticla, asteptand sa se apropie momentul optim de consum. Pentru vinurile rosii, perioada de maturare la sticla este de minim 30 de luni.",
+          "inNav": false
+        },
+        {
+          "kind": "h2",
+          "text": "Etichetare si Livrare",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Ultimul pas din acest proces de creatie presupune etichetarea si impachetarea fiecarei butelii. Daca etichetarea se face automat, impachetarea presupune o ultima verificare a fiecarei sticle DAVINO inainte de iesi din crama: fiecare butelie este verificata si infasurata cu o foaie de hartie subtire, care protejeaza sticla si eticheta pe parcursul transportului, pana cand ajunge in fata dumneavoastra.",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Industrializarea si motorizarea viticulturii insotita de utilizarea masiva a produselor industriei chimice (erbicide, ingrasaminte, pesticide), au dus la moartea solului din punct de vedere al activitatii biologice si la o uniformizare a terroirelor.",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "De aceea folosim pentru tratamente substante de contact, in cea mai mare proportie acestea fiind naturale, am eliminat fertilizatorii chimici, ierbicidele si pesticidele sistemice.",
+          "inNav": false
+        },
+        {
+          "kind": "img",
+          "src": "https://davino.ro/assets/images/logo-davino.png",
+          "alt": "Davino Logo",
+          "width": 391,
+          "height": 87
+        },
+        {
+          "kind": "h2",
+          "text": "Drumul vinului catre perfectiune.",
+          "inNav": false
+        },
+        {
+          "kind": "li",
+          "text": "INTRA IN WEBSITE",
+          "inNav": true
+        },
+        {
+          "kind": "li",
+          "text": "ENGLISH VERSION",
+          "inNav": true
+        },
+        {
+          "kind": "p",
+          "text": "2020 Davino. All rights reserved | Web famous by eJump.",
+          "inNav": false
+        }
+      ],
+      "images": [
+        {
+          "src": "https://davino.ro/assets/images/acasa-bkg.jpg",
+          "width": 560,
+          "height": 422,
+          "alt": "Acasa Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/vinul-bkg.jpg",
+          "width": 560,
+          "height": 420,
+          "alt": "Vinul Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/terroir-bkg.jpg",
+          "width": 560,
+          "height": 422,
+          "alt": "Terroir Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/experienta-bkg.jpg",
+          "width": 560,
+          "height": 422,
+          "alt": "Experienta Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/news-bkg.jpg",
+          "width": 563,
+          "height": 422,
+          "alt": "News Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/contact-bkg.jpg",
+          "width": 560,
+          "height": 422,
+          "alt": "Contact Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/logo-env.png",
+          "width": 303,
+          "height": 303,
+          "alt": "",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/logo-davino.png",
+          "width": 391,
+          "height": 87,
+          "alt": "Davino Logo",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/experienta-bkgr.jpg",
+          "kind": "background",
+          "near": "VINURI\nEXPERIENTA\nLucrarile Solului\n\nCand incepem sa lucram pamantul pe care cre"
+        },
+        {
+          "src": "https://davino.ro/assets/images/background-menu.jpg",
+          "kind": "background",
+          "near": ""
+        }
+      ]
+    },
+    {
+      "url": "https://davino.ro/contact",
+      "title": "Contact | Davino",
+      "blocks": [
+        {
+          "kind": "h2",
+          "text": "Bucuresti",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Str.Arh.Stefan Burcus, Nr. 6,\nSector 1, Bucuresti",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Localizare",
+          "inNav": false
+        },
+        {
+          "kind": "h2",
+          "text": "Ceptura",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Sat Ceptura de jos, Nr. 59,\nComuna Ceptura, Jud. Prahova",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Mobil: +40 0727328466",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Tel: +40 0318053745",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "Fax: +40 0318053746",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "E-mail: office@davino.ro",
+          "inNav": false
+        },
+        {
+          "kind": "p",
+          "text": "DAVINO nu comercializeaza produse in mod direct.\nVinurile DAVINO sunt distribuite exclusiv pe baza de contract, preponderent in sistem on-trade pentru consum in restaurant.\nDAVINO se comercializeaza pentru consum individual numai in magazine specializate in vanzare de vin, precum si in cateva magazine virtuale.",
+          "inNav": false
+        },
+        {
+          "kind": "img",
+          "src": "https://davino.ro/assets/images/logo-davino.png",
+          "alt": "Davino Logo",
+          "width": 391,
+          "height": 87
+        },
+        {
+          "kind": "h2",
+          "text": "Drumul vinului catre perfectiune.",
+          "inNav": false
+        },
+        {
+          "kind": "li",
+          "text": "INTRA IN WEBSITE",
+          "inNav": true
+        },
+        {
+          "kind": "li",
+          "text": "ENGLISH VERSION",
+          "inNav": true
+        },
+        {
+          "kind": "p",
+          "text": "2020 Davino. All rights reserved | Web famous by eJump.",
+          "inNav": false
+        }
+      ],
+      "images": [
+        {
+          "src": "https://davino.ro/assets/images/acasa-bkg.jpg",
+          "width": 560,
+          "height": 422,
+          "alt": "Acasa Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/vinul-bkg.jpg",
+          "width": 560,
+          "height": 420,
+          "alt": "Vinul Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/terroir-bkg.jpg",
+          "width": 560,
+          "height": 422,
+          "alt": "Terroir Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/experienta-bkg.jpg",
+          "width": 560,
+          "height": 422,
+          "alt": "Experienta Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/news-bkg.jpg",
+          "width": 563,
+          "height": 422,
+          "alt": "News Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/contact-bkg.jpg",
+          "width": 560,
+          "height": 422,
+          "alt": "Contact Background",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/logo-davino.png",
+          "width": 391,
+          "height": 87,
+          "alt": "Davino Logo",
+          "kind": "img"
+        },
+        {
+          "src": "https://davino.ro/assets/images/contact-bkgr.jpg",
+          "kind": "background",
+          "near": "VINURI\nBucuresti\n\nStr.Arh.Stefan Burcus, Nr. 6,\nSector 1, Bucuresti\n\n Localizare"
+        },
+        {
+          "src": "https://davino.ro/assets/images/background-menu.jpg",
+          "kind": "background",
+          "near": ""
+        }
+      ]
     }
   ]
 }

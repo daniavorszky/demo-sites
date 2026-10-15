@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-15T13:23:06.769Z",
+  "at": "2026-10-15T13:26:11.497Z",
   "request": {
     "slug": "davino",
     "shots": [
@@ -9,10 +9,16 @@
       }
     ],
     "extract": "https://davino.ro/",
-    "id": "mv9kj2lc"
+    "pages": [
+      "https://davino.ro/vinul",
+      "https://davino.ro/terroir",
+      "https://davino.ro/experienta",
+      "https://davino.ro/contact"
+    ],
+    "id": "mv9kn1fo"
   },
   "ok": [
-    "extract (9 imagini randate)",
+    "extract (7 blocuri, 9 imagini; 4 pagini în plus)",
     "shot before"
   ],
   "errors": []
