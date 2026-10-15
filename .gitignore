@@ -1,5 +1,5 @@
 node_modules
 dist
 .astro
-raw.json
+/raw.json
 src/data/home.json

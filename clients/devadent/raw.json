@@ -1,0 +1,36 @@
+{
+  "source": { "url": "http://www.devadent.ro/", "extractedAt": "2026-10-15T08:26:27Z", "blocks": 14, "note": "Extras prin DataForSEO content parsing + instant pages (site WordPress 2017, Slider Revolution; textul din slider nu e în HTML)" },
+  "site": {
+    "title": "Deva Dent - Cabinet stomatologic Deva, Dentist, Albire, Dertatraj, Chirurgie",
+    "metaDescription": "Deva Dent - cabinet stomatologic din Deva ofera o intreaga gama de servicii stomatologice la standarde Europene! Dertartraj, Prophy Jet, Pedodontie,",
+    "ogImage": "http://www.devadent.ro/wp-content/uploads/2014/04/Programari-300x214.jpg",
+    "lang": "ro_RO",
+    "siteName": "Deva Dent"
+  },
+  "nav": [],
+  "contact": {
+    "phones": ["0770 911 328"],
+    "emails": [],
+    "addressCandidates": ["Str.Mihai Eminescu, Bl. 19B, Sc. A, Ap. 1 ; Deva"],
+    "hoursCandidates": ["Luni – Vineri 08:00 – 20:00", "Sambata: Inchis", "Duminica: Inchis"],
+    "social": { "facebook": "https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fwww.devadent.ro%2F" }
+  },
+  "blocks": [
+    { "i": 0, "kind": "h3", "text": "Orar:" },
+    { "i": 1, "kind": "table", "text": "Luni – Vineri – 08:00 – 20:00 Sambata: – Inchis Duminica: – Inchis" },
+    { "i": 2, "kind": "h2", "text": "Telefon : 0770 911 328" },
+    { "i": 3, "kind": "p", "text": "Deva Dent ; Str.Mihai Eminescu, Bl. 19B, Sc. A, Ap. 1 ; Deva", "words": 11 },
+    { "i": 4, "kind": "link", "text": "Detartraj", "href": "http://www.devadent.ro/dertatraj-deva/" },
+    { "i": 5, "kind": "link", "text": "Pedondotie", "href": "http://www.devadent.ro/pedodontia/" },
+    { "i": 6, "kind": "link", "text": "Albire", "href": "http://www.devadent.ro/albire/" },
+    { "i": 7, "kind": "link", "text": "Paradontologie", "href": "http://www.devadent.ro/parodontologia/" },
+    { "i": 8, "kind": "h2", "text": "Ce spun clientii" },
+    { "i": 9, "kind": "p", "text": "Pentru toti cei care vor vizita aceasta pagina sa nu se gandeasca prea mult si sa isi faca de urgenta o progamare la DEVA DENT Fulep Sebastian", "words": 27 },
+    { "i": 10, "kind": "h2", "text": "." },
+    { "i": 11, "kind": "p", "text": "Ne tratam atat noi cat si copiii nostri la aceasta clinica de cand s-a deschis. Doar cuvinte de lauda avem pentru tinerele doamne doctor de aici. Fara durere, fara stres, fara stat la cozi...e o placere sa mergi la stomatolog...daca se poate spune asta! Andrea Florea", "words": 48 },
+    { "i": 12, "kind": "h3", "text": "Despre noi" },
+    { "i": 13, "kind": "h3", "text": "Date contact" },
+    { "i": 14, "kind": "p", "text": "Urgente 0770 911 328", "words": 4 }
+  ],
+  "leftovers": ["© 2017 Copyright Deva Dent , Toate drepturile rezervate."]
+}

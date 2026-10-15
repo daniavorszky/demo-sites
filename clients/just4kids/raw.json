@@ -1,0 +1,66 @@
+{
+  "source": { "url": "https://just4kids.ro/", "extractedAt": "2026-10-15T08:34:30Z", "note": "Extras prin DataForSEO content parsing + fetch (WordPress, Divi, Everest Forms). Numerele din blocurile de statistici sunt animate din JS și nu apar în HTML." },
+  "site": {
+    "title": "Just4kids - Acasa",
+    "siteName": "Just4kids",
+    "metaDescription": "Sprijinind independenţa, dobândirea capacităţii de decizie şi asumare a responsabilităţilor Just4Kids facilitează construcţia unei imagini de sine puternice, proactive.",
+    "ogImage": "https://just4kids.ro/wp-content/uploads/2024/03/Acasa4-min-1024x576.jpg",
+    "ogImageAlt": "Just4Kids", "ogImageWidth": 1024, "ogImageHeight": 576,
+    "lang": "ro_RO"
+  },
+  "nav": [
+    { "label": "Acasă", "href": "https://just4kids.ro/" },
+    { "label": "Grădinița", "href": "https://just4kids.ro/gradinita-privata-sector-3/" },
+    { "label": "Primar", "href": "https://just4kids.ro/primar/" },
+    { "label": "Gimnaziu", "href": "https://just4kids.ro/gimnaziu/" },
+    { "label": "Liceu", "href": "https://just4kids.ro/liceu/" },
+    { "label": "Media", "href": "https://just4kids.ro/noutati/" },
+    { "label": "Galerie video", "href": "https://just4kids.ro/videos/" },
+    { "label": "Revista școlii", "href": "https://just4kids.ro/newsletter/" },
+    { "label": "Articole", "href": "https://just4kids.ro/articole/" },
+    { "label": "Contact", "href": "https://just4kids.ro/contact/" }
+  ],
+  "contact": {
+    "phones": ["+40 377 703 798"],
+    "emails": ["programari@just4kids.ro"],
+    "addressCandidates": [], "hoursCandidates": [],
+    "social": { "facebook": "https://www.facebook.com/just4kids.ro/", "youtube": "https://www.youtube.com/channel/UCGEgSeQ5ibL1atxb7MljUNQ" }
+  },
+  "buttons": [
+    { "text": "Programează o vizită", "href": "tel:+40377703798" },
+    { "text": "Trimite CV", "href": "mailto:programari@just4kids.ro" },
+    { "text": "Call Now", "href": "tel:+40377703798" },
+    { "text": "Vezi toate revistele aici", "href": "https://just4kids.ro/newsletter/" }
+  ],
+  "statLabels": ["Elevi", "Ani de experiență", "Sedii", "Clase în campus"],
+  "valueTitles": ["Responsabilitatea", "Respectul", "Solidaritatea", "Autorealizare"],
+  "footer": { "Revista Școlii": "Revista lunii AUGUST 2026 — https://just4kids.ro/wp-content/uploads/2026/09/Revista-lunii-AUGUST-2026.pdf", "copyright": "© 2026 Just4Kids, all rights reserved." },
+  "blocks": [
+    { "i": 0, "kind": "h2", "text": "Detalii despre campus:" },
+    { "i": 1, "kind": "p", "text": "J4K Green Campus se numără printre cele mai mari și mai îndrăznețe proiecte educaţionale din capitală și este cu siguranță cel mai mare proiect educațional al sectorului 4. Campusul oferă un spațiu modern, unic prin arhitectura sa, rezultat al unui proiect clădit în mulți ani, gândit cu multă grijă, atenție și respect pentru elevi și întreaga noastră comunitate." },
+    { "i": 2, "kind": "p", "text": "Campusul se concentrează pe sustenabilitate și reducerea impactului asupra mediului. Datorită facilităților pe care Campusul J4K le are, elevii se bucură de o multitudine de oportunități academice, creative dar și sportive." },
+    { "i": 3, "kind": "p", "text": "Educație pentru un viitor verde! La J4K, elevii nu doar învață, ci devin și mici ambasadori ai mediului. Integrăm elemente de educație pentru dezvolatarea durabilă în curriculum național, oferindu-le copiilor șansa de a:" },
+    { "i": 4, "kind": "list", "items": ["participa la programe educaționale și activități interactive: excursii în natură, ateliere de grădinărit și proiecte de reciclare.", "dezvolta un comportament ecologic responsabil: învățând despre impactul omului asupra mediului și descoperind măsuri de protecție a planetei.", "explora resurse online și materiale de bibliotecă: descoperind o lume fascinantă a informațiilor despre ecologie și practici sustenabile."] },
+    { "i": 5, "kind": "h2", "text": "Dotările campusului" },
+    { "i": 6, "kind": "list", "items": ["48 de săli de clasă foarte spațioase, cu mobilier ergonomic, adecvat vârstei și specificului activităților copiilor .", "Biblioteca școlară", "Sală de festivități/ spectacole", "Laboratoare de : fizică, chimie , biologie, arte și informatică", "Lockere cu cod de securitate pentru fiecare elev", "Cabinet pentru consiliere școlară", "2 cabinete medicale", "2 recepții pentru primirea elevilor", "2 săli de conferințe", "2 cancelarii", "3 săli de sport , echipate și dotate cu aparatura necesară desfășurării competițiilor sportive și orelor de educație fizică, baschet, karate, gimnastică și volei", "4 terenuri de sport exterioare și alte zone de relaxare/ socializare", "4 vestiare sportive", "Bucătaria, cu linie caldă de autoservire este dotată după standarde de înaltă calitate, alături de spațiul destinat servirii meselor și cafetăria, pentru momentele de relaxare și socializare", "Holurile generoase sunt concepute în așa fel încât să faciliteze accesul în cât mai multe clase/laboratoare, permițând tranzitarea simultană a mai multor grupuri de elevi", "Panouri solare, baterii de stocare a energiei electrice, sisteme de reciclare", "Sisteme de colectare a apei de ploaie", "Clădiri cu eficiență energetică", "Spații verzi și parcare pentru biciclete", "Stații de încărcare pentru vehicule electrice"] },
+    { "i": 7, "kind": "p", "text": "Alătură-te comunității J4K și fii parte din povestea noastră! Împreună, construim un viitor verde pentru generațiile viitore." },
+    { "i": 8, "kind": "h2", "text": "Drumul spre excelență" },
+    { "i": 9, "kind": "p", "text": "Ne adaptăm permanent la schimbările din societate cu un angajament ferm pentru excelență, inovare și formarea unor adolescenți compleți, pregătiți pentru viitor." },
+    { "i": 10, "kind": "p", "text": "Încurajăm competiția, dar și cooperarea și lucrul în echipă. Elevii noștri obțin rezultate deosebite la olimpiade, concursuri naționale și competiții sportive, demonstrând atât talent individual, cât și abilități de colaborare." },
+    { "i": 11, "kind": "p", "text": "La J4K, îmbrățișăm inovația și integrăm rapid noile tehnologii în procesul de învățare. Utilizăm platforme de învățare online și jocuri educaționale, pentru a personaliza experiența fiecărui elev, pentru a crește gradul de implicare, asigurându-le astfel o experiență educațională relevantă." },
+    { "i": 12, "kind": "p", "text": "Taberele și excursiile sunt medii special create în care copiii își dezvoltă abilitățile necesare transformării în adulți de succes. Pentru că în tabără se simt în sigurantă, copiii iși asumă riscuri și obiective sănătoase și practic, capătă încredere în forţele proprii. Pentru dezvoltarea pesonală, socială și culturală a copiilor de la J4K, aceste “evadări” sunt bine gândite, planificate cu grijă, utilizate ca instrument educațional, oferindu-le copiilor o amintire plăcută și memorabilă." },
+    { "i": 13, "kind": "p", "text": "Pe parcursul anului școlar organizăm:" },
+    { "i": 14, "kind": "list", "items": ["4 excursii tematice", "1 tabără de schi la Predeal/Poiana Brașov", "1 tabără de schi Austria/Italia", "1 tabără de vară, de aventură/ mountain bike", "1 tabără de vară, de aventură Austria, Italia, Germania", "1 tabără internațională ( Anglia, Irlanda, Scoția, SUA, Germania, Austria , Elveția, Japonia) ."] },
+    { "i": 15, "kind": "p", "text": "Pentru noi, educația nu este doar o pregătire pentru teste și examene, ci o călătorie fascinantă către descoperire și autodepășire!" },
+    { "i": 16, "kind": "h2", "text": "Valorile noastre" },
+    { "i": 17, "kind": "p", "text": "Ne asumăm implicațiile faptelor și deciziilor noastre. Ne ținem promisiunile și ne respectăm îndatoririle.Ne așteptăm la responsabilitate de la toți membrii comunității noastre, pentru că știm că faptele noastre au consecințe dincolo de ziua de mâine." },
+    { "i": 18, "kind": "p", "text": "Pentru noi respectul înseamnă onestitate, corectitudine, bun-simțși toleranță. Suntem sinceri cu noi înșine și nu facem promisiuni pe care nu le putem onora. Credem că există reguli și principii si respectăm părerile" },
+    { "i": 19, "kind": "p", "text": "Suntem o familie, nu doar o școală. Încurajăm o relație onestă și caldă între toți membrii acesteia,ne sprijinim,învățăm unii de la alții și lucrăm în echipă. Solidaritatea noastră e una proactivă: ne implicăm în proiectele noastre pedagogice, individuale și în cele de echipă." },
+    { "i": 20, "kind": "p", "text": "Suntem o școală cu performanțe pedagogice,rezultate academice și împliniri profesionale deosebite.Dar știm că am obținut toate acestea cu pasiune, dedicare și perseverență din partea întregii echipe J4K. Vom continua să credem în forțele noastre și vom “construi” pentru viitor oameni valoroși, independenți și puternici." },
+    { "i": 21, "kind": "h2", "text": "Vrei să faci parte din echipa noastră?" },
+    { "i": 22, "kind": "p", "text": "Ai o pasiune pentru educația copiilor și ești gata să faci o diferență reală în viața lor? Just4Kids caută mereu talente entuziaste și dedicate pentru a se alătura echipei noastre." },
+    { "i": 23, "kind": "p", "text": "Oferim o gamă largă de oportunități de carieră, de la educatori, învățători, profesori, la personal administrativ și de suport. Indiferent de abilitățile și experiența ta, suntem siguri că există un loc pentru tine în echipa noastră." },
+    { "i": 24, "kind": "p", "text": "De ce să te alături Just4Kids?" },
+    { "i": 25, "kind": "list", "items": ["Oportunitatea de a face o diferență: Vei avea un impact pozitiv asupra vieții copiilor, ajutându-i să învețe și să se dezvolte.", "Mediu de lucru prietenos și colaborativ: Ne mândrim cu o echipă unită și suportivă, unde te vei simți apreciat și respectat.", "Posibilități de dezvoltare profesională: Oferim cursuri de formare și programe de dezvoltare pentru a te ajuta să-ți avansezi cariera.", "Salariu competitiv și beneficii: Oferim un pachet de salarizare competitiv, care include concediu medical, concediu de odihnă și bonusuri."] }
+  ]
+}
