@@ -17,7 +17,8 @@
     "landing": "node tools/landing.mjs",
     "shots": "node tools/shots.mjs",
     "reskin": "node tools/reskin.mjs",
-    "finalizeaza": "node tools/finalize.mjs"
+    "finalizeaza": "node tools/finalize.mjs",
+    "capture": "node tools/remote.mjs"
   },
   "keywords": [],
   "author": "",

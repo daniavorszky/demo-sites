@@ -1,0 +1,30 @@
+name: capture
+# Extracție + capturi pentru clienți, rulate pe GitHub (acces la orice site), nu în sandbox-ul Claude.
+# Se pornește singur când apare un fișier nou în requests/ (scris de tools/remote.mjs).
+on:
+  push:
+    branches: [main]
+    paths: ["requests/*.json"]
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: { group: capture, cancel-in-progress: false }
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm i --no-save playwright@1.58.2 serve@14 && npx playwright install --with-deps chromium
+      - run: node tools/capture.mjs
+      - name: Commit rezultate
+        run: |
+          git config user.name "capture-bot"
+          git config user.email "capture-bot@users.noreply.github.com"
+          git add -A clients requests
+          git diff --cached --quiet && exit 0
+          git commit -m "[skip ci] capture: $(ls clients/*/capture.json | xargs -n1 dirname | xargs -n1 basename | tr '\n' ' ')"
+          for i in 1 2 3; do git pull --rebase -q && git push && break; sleep 5; done
