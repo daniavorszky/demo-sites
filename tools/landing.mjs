@@ -16,13 +16,13 @@ const L = c.landing || {};
 const newUrl = L.newUrl || `/${L.newPath || slug}/`;
 const company = c.company || slug;
 const title = L.title || `Site-ul ${company}, regândit`;
-const intro = L.intro || "Același conținut, un design nou. Trage de cursor ca să compari.";
+const intro = L.intro || "Același conținut, un design nou.";
 const waText = encodeURIComponent(`Bună, am văzut propunerea pentru ${company} și aș vrea să discutăm.`);
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/"/g, "&quot;");
 
 const out = `static/${slug}-propunere`;
 mkdirSync(out, { recursive: true });
-for (const f of ["before-fold.jpg", "after-fold.jpg", "before-full.jpg", "after-full.jpg"]) {
+for (const f of ["after-fold.jpg", "before-full.jpg", "after-full.jpg"]) {
   const src = `clients/${slug}/shots/${f}`;
   if (!existsSync(src)) { console.error(`Lipsește ${src}`); process.exit(1); }
   copyFileSync(src, join(out, f));
@@ -52,7 +52,15 @@ header .for{font-size:14px;color:var(--ink-soft)}
 h1{font-size:clamp(34px,5.5vw,60px);margin:12px 0 14px}
 h1 em{font-style:italic;color:var(--accent)}
 .hero p{max-width:620px;margin:0 auto;color:var(--ink-soft);font-size:18px}
-/* slider */
+/* screenshot */
+.shot{display:block;margin:28px auto 0;border-radius:16px;overflow:hidden;background:#fff;box-shadow:0 24px 60px rgba(42,38,34,.18);border:1px solid var(--rule);text-decoration:none;transition:transform .2s}
+.shot:hover{transform:translateY(-3px)}
+.shot .chrome{display:flex;align-items:center;gap:6px;padding:10px 14px;background:var(--bg-alt);border-bottom:1px solid var(--rule)}
+.shot .chrome span{width:10px;height:10px;border-radius:50%;background:#d6cfc3}
+.shot .chrome em{margin-left:10px;font-style:normal;font-size:12px;color:var(--ink-soft)}
+.shot img{display:block;width:100%;height:auto}
+.hint a{color:var(--accent);font-weight:600;text-decoration:none}
+/* slider (nefolosit) */
 .ba{position:relative;aspect-ratio:16/10;border-radius:18px;overflow:hidden;box-shadow:0 24px 60px rgba(42,38,34,.18);background:#ddd;user-select:none;touch-action:none;margin:28px auto 0}
 .ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;display:block;pointer-events:none}
 .ba .after{clip-path:inset(0 0 0 var(--x,50%))}
@@ -88,17 +96,14 @@ footer{border-top:1px solid var(--rule);padding:22px 0 40px;color:var(--ink-soft
   <header><div class="brand">${esc(agency.name)}</div><div class="for">Propunere pentru <strong>${esc(company)}</strong></div></header>
 
   <section class="hero">
-    <div class="kicker">Înainte · după</div>
+    <div class="kicker">Propunere de design</div>
     <h1>${esc(title).replace(/,\s*(\S+)$/, ', <em>$1</em>')}</h1>
     <p>${esc(intro)}</p>
-    <div class="ba" id="ba">
-      <img class="before" src="before-fold.jpg" alt="Site-ul actual ${esc(company)}">
-      <img class="after" src="after-fold.jpg" alt="Propunerea ${esc(agency.name)} pentru ${esc(company)}">
-      <span class="tag l">Acum</span><span class="tag r">Propunerea noastră</span>
-      <div class="bar"></div><div class="knob">⇔</div>
-      <input type="range" min="0" max="100" value="50" aria-label="Compară înainte și după">
-    </div>
-    <p class="hint">Trage cursorul stânga–dreapta. Stânga: site-ul de azi. Dreapta: propunerea noastră.</p>
+    <a class="shot" href="${esc(newUrl)}" target="_blank" rel="noopener" aria-label="Deschide propunerea">
+      <div class="chrome"><span></span><span></span><span></span><em>${esc((c.url || "").replace(/^https?:\/\//, "").replace(/\/$/, ""))}</em></div>
+      <img src="after-fold.jpg" alt="Propunerea ${esc(agency.name)} pentru ${esc(company)}">
+    </a>
+    <p class="hint"><a href="${esc(newUrl)}" target="_blank" rel="noopener">Vezi propunerea completă ↗</a></p>
   </section>
 
   <section class="cols">
@@ -127,15 +132,6 @@ footer{border-top:1px solid var(--rule);padding:22px 0 40px;color:var(--ink-soft
 
   <footer>Propunere pregătită de <a href="${esc(agency.url)}" style="color:inherit">${esc(agency.name)}</a> pentru ${esc(company)}${c.contact ? ` · în atenția ${esc(c.contact)}` : ""}. Pagină privată, neindexată.</footer>
 </div>
-<script>
-(function(){var ba=document.getElementById("ba"),r=ba.querySelector("input");
-function set(v){ba.style.setProperty("--x",v+"%")}
-r.addEventListener("input",function(){set(r.value)});
-function fromEvent(e){var b=ba.getBoundingClientRect(),x=(e.clientX-b.left)/b.width*100;x=Math.max(0,Math.min(100,x));r.value=x;set(x)}
-var down=false;ba.addEventListener("pointerdown",function(e){down=true;fromEvent(e)});
-window.addEventListener("pointermove",function(e){if(down)fromEvent(e)});window.addEventListener("pointerup",function(){down=false});
-set(50)})();
-</script>
 </body>
 </html>
 `;
