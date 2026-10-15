@@ -65,6 +65,7 @@ for (const slug of slugs.length ? readdirSync("clients").filter((d) => existsSyn
   const client = readClient(slug);
   if (!client.variante || (only && only !== slug && only !== client.landing?.newPath)) continue;
   const target = client.landing?.newPath && existsSync(join("clients", client.landing.newPath, "home.json")) ? client.landing.newPath : slug;
+  if (!existsSync(join("clients", target, "home.json"))) continue; // client nou, încă fără home.json
   const home = JSON.parse(readFileSync(join("clients", target, "home.json"), "utf8"));
   const current = presetOf(home.site);
   const names = Object.keys(PRESETS);
