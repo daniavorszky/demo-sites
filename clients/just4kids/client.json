@@ -2,5 +2,9 @@
   "url": "https://just4kids.ro/",
   "company": "Just4Kids",
   "contact": "",
-  "createdAt": "2026-10-15"
+  "createdAt": "2026-10-15",
+  "landing": {
+    "newPath": "just4kids-1",
+    "title": "Site-ul Just4Kids, regândit"
+  }
 }

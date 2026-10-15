@@ -13,7 +13,9 @@
     "build:all": "node tools/build-all.mjs",
     "build:one": "node tools/build-all.mjs",
     "new-client": "node tools/new-client.mjs",
-    "fidelity": "node tools/fidelity.mjs"
+    "fidelity": "node tools/fidelity.mjs",
+    "landing": "node tools/landing.mjs",
+    "shots": "node tools/shots.mjs"
   },
   "keywords": [],
   "author": "",
