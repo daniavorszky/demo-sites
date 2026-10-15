@@ -121,3 +121,9 @@ partea pe care o înlocuiești cu `home.json`.
   skin-urile la `/_v/<slug>/` (pagină de comparație; `/_v/` nu se numără în panou).
 - **Nu-ți place designul?** `npm run reskin -- <slug> <editorial|calm|bold|warm> --push` → schimbă skin-ul demo-ului din landing,
   refă captura, regenerează landingul, publică. Conținutul nu se atinge. Link-ul trimis clientului rămâne același.
+
+### Variantele de design (tools/presets.mjs)
+
+O variantă = skin (culori, fonturi) + așezare: `hero` (`split` · `cover` poză pe tot ecranul · `centered`) și `services`
+(`columns` · `cards` · `rows`). Presetările sunt în `tools/presets.mjs`; o presetare nouă = o linie acolo și apare automat
+pe pagina de variante și în `npm run reskin`.

@@ -10,6 +10,7 @@ import { readdirSync, existsSync, cpSync, mkdirSync, writeFileSync, rmSync, read
 import { execSync } from "node:child_process";
 import { join } from "node:path";
 import { beacon, refTag } from "./beacon.mjs";
+import { PRESETS, presetOf } from "./presets.mjs";
 
 const only = process.argv[2];
 const slugs = readdirSync("clients", { withFileTypes: true })
@@ -21,7 +22,6 @@ if (!slugs.length) { console.error("Niciun client găsit în clients/"); process
 mkdirSync("dist", { recursive: true });
 
 const built = [];
-const SKINS = ["editorial", "calm", "bold", "warm"];
 const readClient = (slug) => { const cj = join("clients", slug, "client.json"); return existsSync(cj) ? JSON.parse(readFileSync(cj, "utf8")) : {}; };
 
 // Un build Astro pentru un home.json, publicat la `base`.
@@ -66,13 +66,15 @@ for (const slug of slugs.length ? readdirSync("clients").filter((d) => existsSyn
   if (!client.variante || (only && only !== slug && only !== client.landing?.newPath)) continue;
   const target = client.landing?.newPath && existsSync(join("clients", client.landing.newPath, "home.json")) ? client.landing.newPath : slug;
   const home = JSON.parse(readFileSync(join("clients", target, "home.json"), "utf8"));
-  const current = home.site.skin || "calm";
-  for (const skin of SKINS) {
+  const current = presetOf(home.site);
+  const names = Object.keys(PRESETS);
+  rmSync(join("dist", "_v", slug), { recursive: true, force: true });
+  for (const skin of names) {
     console.log(`\n▶ ${slug} · varianta ${skin}`);
-    const h = structuredClone(home); h.site.skin = skin;
+    const h = structuredClone(home); h.site.skin = PRESETS[skin].skin; h.site.layout = PRESETS[skin].layout;
     buildOne(h, client, join("dist", "_v", slug, skin), `/_v/${slug}/${skin}/`);
   }
-  const cards = SKINS.map((skin) => `<figure class="${skin === current ? "on" : ""}">
+  const cards = names.map((skin) => `<figure class="${skin === current ? "on" : ""}">
   <figcaption><strong>${skin}</strong>${skin === current ? " <span>· folosit acum</span>" : ""}<a href="/_v/${slug}/${skin}/" target="_blank">deschide ↗</a></figcaption>
   <div class="frame"><iframe src="/_v/${slug}/${skin}/" loading="lazy" tabindex="-1" title="${skin}"></iframe></div>
   <code>npm run reskin -- ${slug} ${skin}</code>
@@ -85,7 +87,7 @@ figcaption{display:flex;gap:8px;align-items:baseline;margin-bottom:10px;font-siz
 .frame{width:100%;aspect-ratio:1280/800;overflow:hidden;border-radius:8px;border:1px solid #e2ded6;position:relative}
 .frame iframe{width:1280px;height:800px;border:0;transform-origin:0 0;position:absolute;inset:0;pointer-events:none}
 code{display:block;margin-top:10px;font-size:13px;color:#555;background:#f4f2ee;padding:6px 8px;border-radius:6px}</style></head>
-<body><h1>Variante de design — ${client.company || slug}</h1><p>Același conținut, verificat, în fiecare skin. Alege una și rulează comanda de sub ea (sau spune-i lui Claude).</p>
+<body><h1>Variante de design — ${client.company || slug}</h1><p>Același conținut, verificat, în fiecare variantă de design (culori + așezare). Alege una și rulează comanda de sub ea (sau spune-i lui Claude).</p>
 <div class="grid">${cards}</div>
 <script>function fit(){document.querySelectorAll(".frame").forEach(function(f){f.querySelector("iframe").style.transform="scale("+f.clientWidth/1280+")"})}addEventListener("resize",fit);fit();</script>
 </body></html>`);

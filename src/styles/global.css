@@ -92,6 +92,9 @@ h1, h2, h3 { font-family: var(--font-display, var(--font)); }
 [data-skin="editorial"] .sec-services li { border-top-width: 1px; border-color: var(--rule); counter-increment: svc; }
 [data-skin="editorial"] .sec-services li::before { content: "0" counter(svc); display: block; margin-bottom: 1.25rem; font-size: 0.7rem; letter-spacing: 0.25em; color: var(--ink-soft); }
 [data-skin="editorial"] .sec-services { counter-reset: svc; }
+[data-skin="editorial"] .sec-rows li { border-top-width: 0; }
+[data-skin="editorial"] .sec-rows li::before { grid-column: 1 / -1; margin-bottom: 0; }
+[data-skin="editorial"] .sec-cards li { border-top-width: 1px; }
 [data-skin="editorial"] .list-band { background: var(--accent); color: var(--accent-ink); border-radius: 20px; padding: 2rem; }
 [data-skin="editorial"] .list-band li span:last-child { color: inherit; }
 [data-skin="editorial"] .list-band .bullet { background: var(--accent-ink); opacity: .6; }

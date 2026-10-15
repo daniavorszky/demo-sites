@@ -2,19 +2,46 @@
 import type { Section } from "@/data/types";
 import Section_ from "./Section.astro";
 import Heading from "./Heading.astro";
-type P = Extract<Section, { type: "services" }>;
+type P = Extract<Section, { type: "services" }> & { layout?: { services?: string } };
 const s = Astro.props as P;
-const cols = s.items.length === 2 ? "md:grid-cols-2" : s.items.length === 4 ? "md:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-3";
+// columns (implicit) · cards = carduri pe fundal · rows = rânduri mari, titlu stânga / text dreapta
+const mode = s.layout?.services ?? "columns";
+const n = s.items.length;
+const cols = n === 2 ? "md:grid-cols-2" : n === 4 ? "md:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-3";
 ---
 <Section_ id="servicii">
   <Heading title={s.title} intro={s.intro} />
-  <ul class:list={["sec-services grid gap-x-10 gap-y-12", cols]}>
-    {s.items.map((it) => (
-      <li class="border-t-2 border-accent pt-5">
-        {it.image?.src && <img src={it.image.src} alt={it.image.alt ?? ""} class="mb-4 aspect-[3/2] w-full rounded-ui object-cover" loading="lazy" />}
-        <h3 class="text-xl font-bold">{it.href ? <a href={it.href}>{it.title}</a> : it.title}</h3>
-        {it.text && <p class="mt-2 text-ink-soft">{it.text}</p>}
-      </li>
-    ))}
-  </ul>
+  {mode === "rows" ? (
+    <ul class="sec-services sec-rows divide-y divide-rule border-y border-rule">
+      {s.items.map((it) => (
+        <li class="grid gap-3 py-7 md:grid-cols-[minmax(0,1fr)_minmax(0,1.6fr)] md:gap-10">
+          <h3 class="text-2xl font-bold md:text-3xl">{it.href ? <a href={it.href} class="hover:text-accent">{it.title} <span aria-hidden="true" class="text-accent">→</span></a> : it.title}</h3>
+          <div>
+            {it.image?.src && <img src={it.image.src} alt={it.image.alt ?? ""} class="mb-4 aspect-[3/2] w-full rounded-ui object-cover" loading="lazy" />}
+            {it.text && <p class="text-lg leading-relaxed text-ink-soft">{it.text}</p>}
+          </div>
+        </li>
+      ))}
+    </ul>
+  ) : mode === "cards" ? (
+    <ul class:list={["sec-services sec-cards grid gap-6", cols]}>
+      {s.items.map((it) => (
+        <li class="flex flex-col rounded-ui border border-rule bg-bg-alt p-7 shadow-[0_1px_2px_rgba(0,0,0,.04),0_8px_24px_-12px_rgba(0,0,0,.12)]">
+          {it.image?.src && <img src={it.image.src} alt={it.image.alt ?? ""} class="-mx-7 -mt-7 mb-6 aspect-[3/2] w-[calc(100%+3.5rem)] max-w-none rounded-t-ui object-cover" loading="lazy" />}
+          <h3 class="text-xl font-bold">{it.href ? <a href={it.href} class="hover:text-accent">{it.title} <span aria-hidden="true" class="text-accent">→</span></a> : it.title}</h3>
+          {it.text && <p class="mt-3 leading-relaxed text-ink-soft">{it.text}</p>}
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <ul class:list={["sec-services grid gap-x-10 gap-y-12", cols]}>
+      {s.items.map((it) => (
+        <li class="border-t-2 border-accent pt-5">
+          {it.image?.src && <img src={it.image.src} alt={it.image.alt ?? ""} class="mb-4 aspect-[3/2] w-full rounded-ui object-cover" loading="lazy" />}
+          <h3 class="text-xl font-bold">{it.href ? <a href={it.href}>{it.title}</a> : it.title}</h3>
+          {it.text && <p class="mt-2 text-ink-soft">{it.text}</p>}
+        </li>
+      ))}
+    </ul>
+  )}
 </Section_>

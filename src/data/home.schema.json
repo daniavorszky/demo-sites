@@ -44,6 +44,38 @@
           "additionalProperties": {
             "type": "string"
           }
+        },
+        "skin": {
+          "type": "string",
+          "enum": [
+            "calm",
+            "bold",
+            "warm",
+            "editorial"
+          ]
+        },
+        "layout": {
+          "type": "object",
+          "description": "Așezarea secțiunilor mari (nu atinge conținutul).",
+          "properties": {
+            "hero": {
+              "type": "string",
+              "enum": [
+                "split",
+                "cover",
+                "centered"
+              ]
+            },
+            "services": {
+              "type": "string",
+              "enum": [
+                "columns",
+                "cards",
+                "rows"
+              ]
+            }
+          },
+          "additionalProperties": false
         }
       }
     },

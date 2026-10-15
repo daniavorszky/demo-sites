@@ -24,6 +24,6 @@ const map = { hero: Hero, services: Services, about: About, longText: LongText, 
 <Layout home={data}>
   {data.sections.map((s) => {
     const C = map[s.type as keyof typeof map];
-    return C ? <C {...(s as any)} /> : null;
+    return C ? <C {...(s as any)} layout={data.site.layout ?? {}} /> : null;
   })}
 </Layout>

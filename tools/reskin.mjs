@@ -8,18 +8,19 @@
  */
 import { readFileSync, writeFileSync, existsSync } from "node:fs";
 import { execSync, spawn } from "node:child_process";
+import { PRESETS } from "./presets.mjs";
 
 const [slug, skin] = process.argv.slice(2);
 const push = process.argv.includes("--push");
-const SKINS = ["editorial", "calm", "bold", "warm"];
-if (!slug || !SKINS.includes(skin)) { console.error(`Folosire: node tools/reskin.mjs <slug> <${SKINS.join("|")}> [--push]`); process.exit(1); }
+if (!slug || !PRESETS[skin]) { console.error(`Folosire: node tools/reskin.mjs <slug> <varianta> [--push]\nVariante: ${Object.keys(PRESETS).join(", ")}`); process.exit(1); }
 
 const client = JSON.parse(readFileSync(`clients/${slug}/client.json`, "utf8"));
 const target = client.landing?.newPath && existsSync(`clients/${client.landing.newPath}/home.json`) ? client.landing.newPath : slug;
 const hp = `clients/${target}/home.json`;
 const home = JSON.parse(readFileSync(hp, "utf8"));
 console.log(`${target}: ${home.site.skin || "calm"} → ${skin}`);
-home.site.skin = skin;
+home.site.skin = PRESETS[skin].skin;
+home.site.layout = PRESETS[skin].layout;
 writeFileSync(hp, JSON.stringify(home, null, 2) + "\n");
 
 execSync(`node tools/build-all.mjs ${target}`, { stdio: "inherit" });

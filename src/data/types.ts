@@ -20,6 +20,7 @@ export type Home = {
     name: string; tagline?: string; logo?: string; language?: string;
     phone?: string; email?: string; address?: string; social?: Record<string, string>;
     skin?: "calm" | "bold" | "warm" | "editorial";
+    layout?: { hero?: "split" | "cover" | "centered"; services?: "columns" | "cards" | "rows" };
   };
   nav: Link[];
   sections: Section[];
