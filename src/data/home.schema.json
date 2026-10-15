@@ -569,6 +569,9 @@
         },
         "cta": {
           "$ref": "#/$defs/link"
+        },
+        "image": {
+          "$ref": "#/$defs/image"
         }
       }
     }

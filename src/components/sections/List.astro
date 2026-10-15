@@ -6,6 +6,7 @@ const s = Astro.props as P;
 const twoCol = s.items.length >= 8 && Math.max(...s.items.map((i) => i.length)) < 120;
 ---
 <Section_ narrow>
+  {s.image?.src && <img src={s.image.src} alt={s.image.alt ?? ""} class="mb-10 aspect-[21/9] w-full rounded-ui object-cover" loading="lazy" />}
   {s.title && <h2 class="mb-6 text-3xl font-extrabold tracking-tight md:text-4xl">{s.title}</h2>}
   {s.paragraphs?.length && <div class="prose-measure text-lg leading-relaxed text-ink-soft">{s.paragraphs.map((p) => <p>{p}</p>)}</div>}
   <div class:list={["mt-8", s.listTitle && "list-band"]}>

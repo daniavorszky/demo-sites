@@ -8,7 +8,8 @@
       "facebook": "https://www.facebook.com/just4kids.ro/",
       "youtube": "https://www.youtube.com/channel/UCGEgSeQ5ibL1atxb7MljUNQ"
     },
-    "skin": "editorial"
+    "skin": "editorial",
+    "logo": "https://just4kids.ro/wp-content/uploads/2026/09/Logo-J4K-RGB-01.png"
   },
   "nav": [
     {
@@ -81,7 +82,11 @@
       "title": "Detalii despre campus:",
       "paragraphs": [
         "J4K Green Campus se numără printre cele mai mari și mai îndrăznețe proiecte educaţionale din capitală și este cu siguranță cel mai mare proiect educațional al sectorului 4. Campusul oferă un spațiu modern, unic prin arhitectura sa, rezultat al unui proiect clădit în mulți ani, gândit cu multă grijă, atenție și respect pentru elevi și întreaga noastră comunitate."
-      ]
+      ],
+      "image": {
+        "src": "https://just4kids.ro/wp-content/uploads/2024/02/DSC4496-min.jpg",
+        "alt": ""
+      }
     },
     {
       "type": "list",
@@ -122,7 +127,11 @@
         "Spații verzi și parcare pentru biciclete",
         "Stații de încărcare pentru vehicule electrice"
       ],
-      "outro": "Alătură-te comunității J4K și fii parte din povestea noastră! Împreună, construim un viitor verde pentru generațiile viitore."
+      "outro": "Alătură-te comunității J4K și fii parte din povestea noastră! Împreună, construim un viitor verde pentru generațiile viitore.",
+      "image": {
+        "src": "https://just4kids.ro/wp-content/uploads/2024/02/Scoala-min.jpg",
+        "alt": ""
+      }
     },
     {
       "type": "list",
@@ -143,7 +152,11 @@
         "1 tabără de vară, de aventură Austria, Italia, Germania",
         "1 tabără internațională ( Anglia, Irlanda, Scoția, SUA, Germania, Austria , Elveția, Japonia) ."
       ],
-      "outro": "Pentru noi, educația nu este doar o pregătire pentru teste și examene, ci o călătorie fascinantă către descoperire și autodepășire!"
+      "outro": "Pentru noi, educația nu este doar o pregătire pentru teste și examene, ci o călătorie fascinantă către descoperire și autodepășire!",
+      "image": {
+        "src": "https://just4kids.ro/wp-content/uploads/2024/01/activitati-scaled.jpg",
+        "alt": ""
+      }
     },
     {
       "type": "services",
@@ -186,6 +199,10 @@
       "cta": {
         "label": "Trimite CV",
         "href": "mailto:programari@just4kids.ro"
+      },
+      "image": {
+        "src": "https://just4kids.ro/wp-content/uploads/2024/02/10-min.jpg.webp",
+        "alt": ""
       }
     },
     {
@@ -206,7 +223,8 @@
       "Valorile noastre: titlurile (Responsabilitatea, Respectul, Solidaritatea, Autorealizare) vin din cardurile paginii; paragrafele «Suntem o familie…» și «Solidaritatea noastră…» aparțin aceleiași valori și au fost unite.",
       "Pozele din galeria homepage-ului sunt încărcate lazy și nu apar în HTML ca URL-uri — nu au putut fi preluate.",
       "Footer: «Revista Școlii» (PDF lunar) și linkurile legale (Termeni, GDPR, ANPC) nu sunt conținut de homepage; omise din demo.",
-      "Adresa și programul nu apar pe homepage (sunt pe pagina de contact)."
+      "Adresa și programul nu apar pe homepage (sunt pe pagina de contact).",
+      "Imaginile secțiunilor sunt fundalurile CSS ale secțiunilor corespunzătoare de pe site (Divi), aceleași URL-uri."
     ]
   },
   "demo": {

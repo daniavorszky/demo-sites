@@ -5,7 +5,7 @@ export type Section =
   | { type: "hero"; _source?: string; title: string; subtitle?: string; text?: string; image?: Img; cta?: Link; ctaSecondary?: Link }
   | { type: "services"; _source?: string; title?: string; intro?: string; items: { title: string; text?: string; image?: Img; href?: string }[] }
   | { type: "about"; _source?: string; title: string; paragraphs: string[]; image?: Img; cta?: Link }
-  | { type: "list"; _source?: string; title?: string; paragraphs?: string[]; listTitle?: string; items: string[]; outro?: string; cta?: Link }
+  | { type: "list"; _source?: string; title?: string; image?: Img; paragraphs?: string[]; listTitle?: string; items: string[]; outro?: string; cta?: Link }
   | { type: "longText"; _source?: string; title?: string; paragraphs: string[] }
   | { type: "team"; _source?: string; title?: string; intro?: string; members: { name: string; role?: string; text?: string; image?: Img }[] }
   | { type: "testimonials"; _source?: string; title?: string; items: { quote: string; author?: string; role?: string }[] }
