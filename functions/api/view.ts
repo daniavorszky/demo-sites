@@ -4,6 +4,21 @@ import { BOTS, device } from "../_lib/device";
 
 interface Env { DESCHIDERI: KVNamespace; SLACK_WEBHOOK_URL?: string }
 
+// Diagnostic: GET /api/view?test=1 trimite un mesaj de test pe Slack și raportează dacă variabila și KV-ul sunt vizibile.
+export const onRequestGet: PagesFunction<Env> = async ({ request, env }) => {
+  const url = new URL(request.url);
+  if (url.searchParams.get("test") !== "1") return new Response(null, { status: 405 });
+  const hook = env.SLACK_WEBHOOK_URL || "";
+  let slack = "variabila lipseste";
+  if (hook) {
+    try {
+      const r = await fetch(hook, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ text: "Test demo-sites: Slack functioneaza." }) });
+      slack = `${r.status} ${(await r.text()).slice(0, 60)}`;
+    } catch (e) { slack = `eroare fetch: ${String(e).slice(0, 80)}`; }
+  }
+  return Response.json({ slackVar: hook ? `setata (${hook.length} caractere, incepe cu ${hook.slice(0, 26)})` : "lipseste", slack, kv: !!env.DESCHIDERI });
+};
+
 export const onRequestPost: PagesFunction<Env> = async ({ request, env, waitUntil }) => {
   const ua = request.headers.get("user-agent") || "";
   if (!ua || BOTS.test(ua)) return new Response(null, { status: 204 });
