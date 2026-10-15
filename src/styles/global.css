@@ -90,7 +90,7 @@ h1, h2, h3 { font-family: var(--font-display, var(--font)); }
 [data-skin="editorial"] .kicker { display: block; margin-bottom: 1rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); }
 [data-skin="editorial"] img { border-radius: 20px; }
 [data-skin="editorial"] .sec-services li { border-top-width: 1px; border-color: var(--rule); counter-increment: svc; }
-[data-skin="editorial"] .sec-services li::before { content: "0" counter(svc); display: block; margin-bottom: 1.25rem; font-size: 0.7rem; letter-spacing: 0.25em; color: var(--ink-soft); }
+[data-skin="editorial"] .sec-services li::before { content: counter(svc, decimal-leading-zero); display: block; margin-bottom: 1.25rem; font-size: 0.7rem; letter-spacing: 0.25em; color: var(--ink-soft); }
 [data-skin="editorial"] .sec-services { counter-reset: svc; }
 [data-skin="editorial"] .sec-rows li { border-top-width: 0; }
 [data-skin="editorial"] .sec-rows li::before { grid-column: 1 / -1; margin-bottom: 0; }
