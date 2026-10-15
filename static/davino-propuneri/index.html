@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>DAVINO — trei direcții pentru homepage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F5F0E8;--ink:#211B17;--soft:#6F655C;--rule:#D8CDBE;--wine:#6B2232}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font:300 16px/1.65 "Jost",system-ui,sans-serif;padding:clamp(28px,5vw,72px) clamp(20px,5vw,72px)}
+a{color:inherit;text-decoration:none}
+.top{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1px solid var(--rule);padding-bottom:20px}
+.logo{font:400 24px "Cormorant Garamond",serif;letter-spacing:.34em}
+.k{font:500 11px "Jost";letter-spacing:.28em;text-transform:uppercase;color:var(--soft)}
+h1{font:300 clamp(40px,5.4vw,80px)/1 "Cormorant Garamond",serif;margin:clamp(40px,7vw,90px) 0 18px;max-width:900px}
+h1 em{color:var(--wine)}
+.lead{max-width:640px;color:var(--soft)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.5vw,36px);margin-top:clamp(40px,6vw,80px)}
+.card{display:block}
+.card .img{aspect-ratio:4/5;overflow:hidden;margin-bottom:20px;background:#ddd}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.card:hover img{transform:scale(1.05)}
+.card b{font:italic 300 15px "Cormorant Garamond",serif;color:var(--wine)}
+.card h2{font:400 34px/1.05 "Cormorant Garamond",serif;margin:6px 0 10px}
+.card p{font-size:14.5px;color:var(--soft)}
+.card span{display:inline-block;margin-top:16px;font:500 11px "Jost";letter-spacing:.24em;text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:5px}
+.card:hover span{color:var(--wine)}
+.note{margin-top:clamp(50px,7vw,90px);padding-top:20px;border-top:1px solid var(--rule);font-size:13.5px;color:var(--soft);max-width:860px}
+@media (max-width:900px){.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="top"><span class="logo">DAVINO</span><span class="k">Propunere DGA · homepage</span></div>
+<h1>Trei direcții pentru <em>noul davino.ro.</em></h1>
+<p class="lead">Aceeași cramă, același brief, trei feluri de a spune povestea: ca revistă, ca un an în viață, ca hartă a două dealuri. Fiecare urmează fluxul cerut: domeniu, terroir, vinuri, vinificație, oameni, vizită, jurnal.</p>
+<div class="grid">
+  <a class="card" href="/davino-revista/"><div class="img"><img src="/davino-assets/Background-Homepage.jpg" alt=""></div><b>A.</b><h2>Revista</h2><p>Editorial și atemporal. Hârtie ivory, accent bordo, tipografie serif mare, capitole numerotate. Referință de ton: Ornellaia.</p><span>Deschide direcția A</span></a>
+  <a class="card" href="/davino-timp/"><div class="img"><img src="/davino-assets/experienta-bkgr.jpg" alt=""></div><b>B.</b><h2>Timpul</h2><p>Procesul ca poveste. Anul viei pas cu pas și cifrele care fac diferența: 60+ de ani, 3 sortări, 30 de luni. Referință: Opus One.</p><span>Deschide direcția B</span></a>
+  <a class="card" href="/davino-terroir/"><div class="img"><img src="/davino-assets/contact-bkgr.jpg" alt=""></div><b>C.</b><h2>Terroir</h2><p>Locul ca fir roșu. Secțiune prin cele două dealuri, argila de la vest și calcarul de la est, legate de vinuri. Referință: Tignanello.</p><span>Deschide direcția C</span></a>
+</div>
+<p class="note">Machete de homepage, în română, cu selectorul RO | EN pregătit. Fotografiile sunt cele de pe davino.ro, recuperate la luminozitatea lor naturală; ședința foto/video din propunere le va înlocui. Textele sunt o propunere de ton, construită pe informațiile de pe site.</p>
+</body>
+</html>

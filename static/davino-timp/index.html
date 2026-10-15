@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>DAVINO — Timpul</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --stone:#ECE7DE; --stone-2:#E2DBCF; --olive:#23261F; --ink:#1E1F1B; --soft:#6C6A60; --rule:#CFC6B7;
+  --clay:#94492F; --clay-2:#B8664A;
+  --serif:"Instrument Serif",Georgia,serif; --sans:"Inter Tight",system-ui,sans-serif;
+  --pad:clamp(20px,4.5vw,64px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--stone);color:var(--ink);font:300 16.5px/1.65 var(--sans);-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1440px;margin:0 auto;padding:0 var(--pad)}
+.tag{font:500 11px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase}
+.arrow{font:500 13px var(--sans);display:inline-flex;gap:10px;align-items:center;border-bottom:1px solid currentColor;padding-bottom:4px}
+.arrow:hover{color:var(--clay)}
+
+header{position:fixed;inset:0 0 auto;z-index:30;mix-blend-mode:difference;color:#fff}
+.bar{display:flex;justify-content:space-between;align-items:center;height:72px}
+.logo{font:600 15px/1 var(--sans);letter-spacing:.42em}
+nav ul{display:flex;gap:26px;list-style:none}
+nav a{font:400 13px var(--sans)}
+.lang{font:500 12px var(--sans);letter-spacing:.12em}.lang span{opacity:.5}
+
+/* hero: split */
+.hero{display:grid;grid-template-columns:5fr 7fr;min-height:100svh}
+.hero .panel{background:var(--olive);color:#E9E3D7;padding:120px var(--pad) 56px;display:flex;flex-direction:column;justify-content:space-between}
+.hero h1{font:400 clamp(52px,6.8vw,112px)/.95 var(--serif);letter-spacing:-.01em}
+.hero h1 em{color:var(--clay-2)}
+.hero .meta{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;color:#AFA899;font-size:14px}
+.hero .meta p{max-width:300px}
+.hero .photo{position:relative;overflow:hidden}
+.hero .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:slow 30s ease-in-out infinite alternate}
+@keyframes slow{to{transform:scale(1.1)}}
+.hero .photo .stamp{position:absolute;right:28px;bottom:28px;color:#fff;font:500 11px var(--sans);letter-spacing:.2em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.4)}
+
+/* statement */
+.statement{padding-block:clamp(100px,14vw,200px) clamp(60px,8vw,110px)}
+.statement>p{font:400 clamp(30px,3.9vw,60px)/1.12 var(--serif);max-width:1180px}
+.statement>p em{color:var(--clay)}
+.statement .row p{font:300 16px/1.65 var(--sans)}
+.statement .row{display:flex;gap:60px;margin-top:56px;color:var(--soft);font-size:15.5px;max-width:980px}
+
+/* numbers */
+.numbers{display:grid;grid-template-columns:repeat(6,1fr);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.numbers div{padding:34px 22px 30px;border-right:1px solid var(--rule)}
+.numbers div:last-child{border-right:0}
+.numbers b{display:block;font:400 clamp(44px,4.6vw,76px)/1 var(--serif);color:var(--ink)}
+.numbers span{font-size:13px;color:var(--soft);display:block;margin-top:10px;line-height:1.4}
+
+/* year */
+.year{padding:clamp(90px,12vw,170px) 0 0}
+.year .head{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:46px}
+h2{font:400 clamp(40px,5vw,80px)/1 var(--serif)}
+h2 em{color:var(--clay)}
+.track{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(300px,30%);gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--pad) 30px;scrollbar-width:thin}
+.card{scroll-snap-align:start;background:#F4F0E9;border:1px solid var(--rule);display:flex;flex-direction:column}
+.card img{aspect-ratio:4/3;object-fit:cover;width:100%}
+.card .in{padding:24px 24px 30px;display:flex;flex-direction:column;gap:10px;flex:1}
+.card .when{display:flex;justify-content:space-between;color:var(--clay)}
+.card h3{font:400 32px/1.05 var(--serif)}
+.card p{font-size:14.5px;color:var(--soft)}
+.card.dark{background:var(--olive);color:#E9E3D7;border-color:var(--olive)}
+.card.dark p{color:#AFA899}
+.hint{padding:0 var(--pad);color:var(--soft);font-size:13px}
+
+/* terroir */
+.terroir{display:grid;grid-template-columns:1fr 1fr;margin-top:clamp(90px,12vw,170px)}
+.terroir .img{position:relative;min-height:720px}
+.terroir .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.terroir .txt{background:var(--stone-2);padding:clamp(48px,6vw,96px) var(--pad);display:flex;flex-direction:column;justify-content:center;gap:30px}
+.layer{display:grid;grid-template-columns:90px 1fr;gap:20px;padding-top:20px;border-top:1px solid var(--rule)}
+.layer i{width:90px;height:56px;display:block}
+.layer h4{font:500 13px var(--sans);letter-spacing:.14em;text-transform:uppercase;margin-bottom:6px}
+.layer p{font-size:15px;color:var(--soft)}
+
+/* wines */
+.wines{padding-block:clamp(90px,12vw,170px)}
+.wgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:50px}
+.w{background:#F4F0E9;border:1px solid var(--rule);padding:36px 20px 22px;display:flex;flex-direction:column;align-items:center;text-align:center;transition:background .4s}
+.w:hover{background:#fff}
+.w img{height:300px;width:auto;margin-bottom:26px;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.w:hover img{transform:scale(1.04) rotate(-1.5deg)}
+.w h4{font:400 26px/1 var(--serif)}
+.w span{font-size:12.5px;color:var(--soft);margin-top:8px}
+.families{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.families a{border:1px solid var(--rule);border-radius:40px;padding:10px 18px;font-size:13.5px}
+.families a:hover{border-color:var(--clay);color:var(--clay)}
+
+/* people */
+.people{position:relative;color:#fff;min-height:88vh;display:flex;align-items:flex-end}
+.people img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.people::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(25,26,21,.85),rgba(25,26,21,.2) 70%)}
+.people .wrap{position:relative;z-index:2;padding-bottom:70px;width:100%}
+.people p.q{font:400 clamp(34px,4.4vw,68px)/1.05 var(--serif);max-width:1000px}
+.people p.s{margin-top:22px;max-width:520px;color:rgba(255,255,255,.85)}
+
+/* visit */
+.visit{display:grid;grid-template-columns:7fr 5fr;gap:0;background:var(--olive);color:#E9E3D7}
+.visit img{width:100%;height:100%;min-height:600px;object-fit:cover}
+.visit .f{padding:clamp(48px,6vw,90px) var(--pad);display:flex;flex-direction:column;justify-content:center;gap:22px}
+.visit h2 em{color:var(--clay-2)}
+.visit p{color:#AFA899}
+.form{display:grid;gap:12px;margin-top:10px}
+.form input,.form select{background:transparent;border:0;border-bottom:1px solid #575A4E;color:#E9E3D7;font:300 15px var(--sans);padding:12px 0}
+.form input::placeholder{color:#8D8A7D}
+.form button{margin-top:14px;justify-self:start;background:var(--clay);color:#fff;border:0;font:500 13px var(--sans);letter-spacing:.06em;padding:16px 26px;cursor:pointer}
+.form button:hover{background:var(--clay-2)}
+
+/* journal */
+.journal{padding-block:clamp(90px,12vw,170px)}
+.jl{margin-top:40px;border-top:1px solid var(--ink)}
+.jl a{display:grid;grid-template-columns:160px 1fr 200px 40px;gap:30px;align-items:center;padding:28px 0;border-bottom:1px solid var(--rule);transition:padding .4s,color .3s}
+.jl a:hover{padding-left:14px;color:var(--clay)}
+.jl h3{font:400 clamp(26px,2.6vw,38px)/1.1 var(--serif)}
+.jl span{font-size:13.5px;color:var(--soft)}
+
+footer{background:var(--ink);color:#C9C3B6;padding:80px 0 34px;font-size:14px}
+footer .top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+footer .mark{font:600 15px var(--sans);letter-spacing:.42em;color:#fff}
+footer .mark+p{margin-top:16px;max-width:280px}
+footer h5{font:500 11px var(--sans);letter-spacing:.18em;text-transform:uppercase;color:#7E7A6F;margin-bottom:14px}
+footer li{list-style:none;margin-bottom:7px}
+footer .fine{margin-top:70px;padding-top:22px;border-top:1px solid #3A3C35;display:flex;justify-content:space-between;color:#7E7A6F;font-size:12.5px}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:1000px){
+  nav ul{display:none}
+  .hero,.terroir,.visit{grid-template-columns:1fr}
+  .hero .photo{min-height:60vh}
+  .numbers{grid-template-columns:repeat(3,1fr)}
+  .numbers div:nth-child(3){border-right:0}
+  .numbers div:nth-child(-n+3){border-bottom:1px solid var(--rule)}
+  .track{grid-auto-columns:78%}
+  .wgrid{grid-template-columns:1fr 1fr}
+  .jl a{grid-template-columns:1fr;gap:6px}
+  footer .top{grid-template-columns:1fr 1fr}
+  .statement .row{flex-direction:column;gap:20px}
+}
+@media (max-width:560px){.numbers{grid-template-columns:1fr 1fr}.numbers div{border-right:0!important}.w img{height:220px}}
+@media (prefers-reduced-motion:reduce){.hero .photo img{animation:none}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="logo" href="#">DAVINO</a>
+    <nav><ul>
+      <li><a href="#vinuri">Vinuri</a></li><li><a href="#terroir">Terroir</a></li><li><a href="#an">Vinificație</a></li>
+      <li><a href="#viziteaza">Vizitează-ne</a></li><li><a href="#jurnal">Jurnal</a></li><li><a href="#contact">Contact</a></li>
+    </ul></nav>
+    <div class="lang">RO &nbsp;<span>EN</span></div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="panel">
+    <p class="tag" style="color:#AFA899">Ceptura · Dealu Mare</p>
+    <h1>Un an întreg<br>încape într-o<br><em>sticlă.</em></h1>
+    <div class="meta">
+      <p>De la tăierea de iarnă până la cele 30 de luni de odihnă la sticlă, vinul DAVINO se face încet, la Ceptura.</p>
+      <a class="arrow" href="#an">Urmărește anul ↓</a>
+    </div>
+  </div>
+  <div class="photo">
+    <img src="/davino-assets/experienta-bkgr.jpg" alt="Ciorchini de struguri negri în lumina de seară">
+    <span class="stamp">Toamna, la Ceptura</span>
+  </div>
+</section>
+
+<section class="statement wrap">
+  <p class="rv">Nu grăbim nimic. Limităm recolta, culegem noaptea, lăsăm gravitația să mute vinul și <em>timpul să-l termine.</em></p>
+  <div class="row rv">
+    <p>DAVINO este o cramă din Dealu Mare, construită în jurul unei idei simple: calitatea se decide în vie. Restul e răbdare.</p>
+    <p>Lucrăm fiecare parcelă și fiecare soi separat, de la cules până la baric. Așa fiecare vin păstrează locul din care vine.</p>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="numbers rv">
+    <div><b>60+</b><span>ani au cele mai bătrâne vițe de Cabernet Sauvignon</span></div>
+    <div><b>3</b><span>sortări ale strugurilor, de la rând la cramă</span></div>
+    <div><b>0</b><span>substanțe sistemice în plantație</span></div>
+    <div><b>100%</b><span>stejar românesc în crama de butoaie</span></div>
+    <div><b>225 L</b><span>baricurile în care se maturează roșiile</span></div>
+    <div><b>30</b><span>de luni, minimum, la sticlă pentru roșii</span></div>
+  </div>
+</div>
+
+<section class="year" id="an">
+  <div class="wrap head">
+    <h2 class="rv">Anul viei, <em>pas cu pas.</em></h2>
+    <a class="arrow" href="#">Vinificația, pe larg →</a>
+  </div>
+  <div class="track">
+    <article class="card"><img src="/davino-assets/sol-image.jpg" alt=""><div class="in"><div class="when tag"><span>Iarna</span><span>01</span></div><h3>Tăierea</h3><p>Decide cât rod va duce fiecare viță. Echilibrul se învață doar în mulți ani.</p></div></article>
+    <article class="card"><img src="/davino-assets/clima-image.jpg" alt=""><div class="in"><div class="when tag"><span>Primăvara</span><span>02</span></div><h3>Plivitul și copilitul</h3><p>Rărim mugurii și lăstarii, ca soarele și aerul să ajungă la fiecare ciorchine.</p></div></article>
+    <article class="card"><img src="/davino-assets/precipitatii-image.jpg" alt=""><div class="in"><div class="when tag"><span>Vara</span><span>03</span></div><h3>Culesul în verde</h3><p>Renunțăm voit la o parte din recoltă. Mai puțini struguri, maturați deplin.</p></div></article>
+    <article class="card"><img src="/davino-assets/oamenii-image.jpg" alt=""><div class="in"><div class="when tag"><span>Aug. – Nov.</span><span>04</span></div><h3>Culesul, noaptea</h3><p>Manual, doar noaptea. Feteasca Albă prima, Cabernet Sauvignon ultimul.</p></div></article>
+    <article class="card dark"><img src="/davino-assets/news-bkg.jpg" alt=""><div class="in"><div class="when tag"><span>Crama</span><span>05</span></div><h3>Gravitația</h3><p>Vinificăm parcelă cu parcelă. Pentru roșii păstrăm doar ravacul, mustul care curge singur.</p></div></article>
+    <article class="card dark"><img src="/davino-assets/acasa-bkg.jpg" alt=""><div class="in"><div class="when tag"><span>Baricul</span><span>06</span></div><h3>Stejar românesc</h3><p>Fermentația malolactică a roșiilor are loc mereu în baric.</p></div></article>
+    <article class="card dark"><img src="/davino-assets/vinul-bkg.jpg" alt=""><div class="in"><div class="when tag"><span>Sticla</span><span>07</span></div><h3>Timpul</h3><p>Dop de plută naturală, apoi cel puțin 30 de luni de așteptare pentru roșii.</p></div></article>
+  </div>
+  <p class="hint">Glisează pentru tot anul →</p>
+</section>
+
+<section class="terroir" id="terroir">
+  <div class="img"><img src="/davino-assets/contact-bkgr.jpg" alt="Via DAVINO la răsărit"></div>
+  <div class="txt">
+    <span class="tag" style="color:var(--clay)">Terroir</span>
+    <h2 class="rv">Ce e sub vie <em>se simte în pahar.</em></h2>
+    <div class="layer rv"><i style="background:repeating-linear-gradient(0deg,#94492F 0 9px,#B8664A 9px 14px)"></i><div><h4>Dealul de vest</h4><p>Argile bogate în oxizi de fier, pentru vinurile roșii.</p></div></div>
+    <div class="layer rv"><i style="background:repeating-linear-gradient(0deg,#D9CDB2 0 9px,#C4B48F 9px 14px)"></i><div><h4>Dealul de est</h4><p>Calcar sarmatic ușor, pentru vinurile aromate.</p></div></div>
+    <div class="layer rv"><i style="background:linear-gradient(180deg,#E9C98F,#C98E55)"></i><div><h4>Clima</h4><p>Continentală, temperată de dealurile subcarpatice și de aerul cald din sud-vest. 2.150–2.200 de ore de soare pe an.</p></div></div>
+    <a class="arrow" href="#">Descoperă terroir-ul →</a>
+  </div>
+</section>
+
+<section class="wines wrap" id="vinuri">
+  <span class="tag" style="color:var(--clay)">Vinurile</span>
+  <h2 class="rv" style="margin-top:16px">Opt familii, <em>un singur sat.</em></h2>
+  <div class="wgrid">
+    <a class="w rv" href="#"><img src="/davino-assets/gen_vast_rosu.webp" alt="Vast Roșu"><h4>Vast</h4><span>Alb · Roșu · Rosé</span></a>
+    <a class="w rv" href="#"><img src="/davino-assets/Faurar_Rosu_Nou1.webp" alt="Faurar Roșu"><h4>Faurar</h4><span>Merlot, Cabernet Sauvignon, Fetească Neagră</span></a>
+    <a class="w rv" href="#"><img src="/davino-assets/alba_gen.webp" alt="Alba Valahica"><h4>Alba Valahica</h4><span>Vin alb</span></a>
+    <a class="w rv" href="#"><img src="/davino-assets/gen_purpura.webp" alt="Purpura Valahica"><h4>Purpura Valahica</h4><span>Vin roșu</span></a>
+  </div>
+  <div class="families rv">
+    <a href="#">Flamboyant</a><a href="#">Domaine Ceptura</a><a href="#">Revelatio</a><a href="#">Rezerva</a><a href="#">Iacob</a><a href="#">Vast</a><a href="#">Faurar</a><a href="#">Valahica</a>
+  </div>
+</section>
+
+<section class="people">
+  <img src="/davino-assets/oamenii-image.jpg" alt="Culegători la DAVINO">
+  <div class="wrap">
+    <span class="tag" style="color:rgba(255,255,255,.75)">Oamenii</span>
+    <p class="q rv" style="margin-top:16px">Culegem cu oameni ai locului. Cei mai mulți se întorc în fiecare an.</p>
+    <p class="s rv">Ei fac a doua sortare chiar pe rând, cu ochiul celui care cunoaște via de o viață.</p>
+  </div>
+</section>
+
+<section class="visit" id="viziteaza">
+  <img src="/davino-assets/vin-bkgr-v2-new.jpg" alt="Sala de degustare DAVINO">
+  <div class="f">
+    <span class="tag" style="color:var(--clay-2)">Vizitează-ne</span>
+    <h2>Vino la <em>Ceptura.</em></h2>
+    <p>Via, crama și sala de degustare, în vizite cu programare. Spune-ne când vrei să vii și revenim noi.</p>
+    <form class="form" onsubmit="event.preventDefault();this.querySelector('button').textContent='Mulțumim, revenim în curând'">
+      <input placeholder="Nume" aria-label="Nume">
+      <input placeholder="Email sau telefon" aria-label="Email sau telefon">
+      <input placeholder="Data dorită și numărul de persoane" aria-label="Data și persoane">
+      <button>Solicită o vizită</button>
+    </form>
+  </div>
+</section>
+
+<section class="journal wrap" id="jurnal">
+  <span class="tag" style="color:var(--clay)">Jurnal</span>
+  <h2 class="rv" style="margin-top:16px">Din vie <em>și din cramă.</em></h2>
+  <div class="jl">
+    <a href="#" class="rv"><span class="tag">Recoltă</span><h3>De ce culegem doar noaptea</h3><span>Temperatură, stres, aromă</span><span>→</span></a>
+    <a href="#" class="rv"><span class="tag">Vie</span><h3>O vie fără substanțe sistemice</h3><span>Echilibrul care se reglează singur</span><span>→</span></a>
+    <a href="#" class="rv"><span class="tag">Cramă</span><h3>Ravacul: mustul care curge singur</h3><span>Vinificația gravitațională</span><span>→</span></a>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="top">
+      <div><div class="mark">DAVINO</div><p>Cramă în Ceptura, Dealu Mare. Vinuri din parcelele proprii, vinificate separat și lăsate să se maturizeze în timp.</p></div>
+      <div><h5>Crama</h5><ul><li>Sat Ceptura de jos, Nr. 59</li><li>Comuna Ceptura, Jud. Prahova</li></ul></div>
+      <div><h5>București</h5><ul><li>Str. Arh. Ștefan Burcuș, Nr. 6</li><li>Sector 1</li><li>office@davino.ro</li><li>+40 727 328 466</li></ul></div>
+      <div><h5>Profesioniști</h5><ul><li><a href="#">Trade &amp; Media</a></li><li><a href="#">Fișe tehnice</a></li><li><a href="#">Export</a></li></ul></div>
+    </div>
+    <div class="fine"><span>© DAVINO</span><span>RO | EN</span></div>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
