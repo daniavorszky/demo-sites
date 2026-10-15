@@ -6,7 +6,7 @@
  *   node tools/build-all.mjs            # toți clienții
  *   node tools/build-all.mjs just4kids  # doar unul (restul din dist rămân)
  */
-import { readdirSync, existsSync, copyFileSync, mkdirSync, writeFileSync, rmSync, readFileSync } from "node:fs";
+import { readdirSync, existsSync, copyFileSync, cpSync, mkdirSync, writeFileSync, rmSync, readFileSync } from "node:fs";
 import { execSync } from "node:child_process";
 import { join } from "node:path";
 
@@ -29,6 +29,18 @@ for (const slug of slugs) {
   execSync(`npx astro build --outDir ${out}`, { stdio: "inherit", env: { ...process.env, BASE: `/${slug}/` } });
   const home = JSON.parse(readFileSync(src, "utf8"));
   built.push({ slug, name: home.site.name, source: home.source?.url, date: home.source?.extractedAt?.slice(0, 10) });
+}
+
+// Demo-uri statice (ex. exporturi Shuffle) din static/<slug>/ → copiate ca atare în dist/<slug>/.
+const statics = existsSync("static") ? readdirSync("static", { withFileTypes: true }).filter((d) => d.isDirectory()).map((d) => d.name) : [];
+for (const slug of statics) {
+  const out = join("dist", slug);
+  rmSync(out, { recursive: true, force: true });
+  cpSync(join("static", slug), out, { recursive: true });
+  const metaPath = join("static", slug, "_meta.json");
+  const meta = existsSync(metaPath) ? JSON.parse(readFileSync(metaPath, "utf8")) : {};
+  built.push({ slug, name: meta.label || slug, source: meta.source, date: meta.note });
+  console.log(`\n▶ ${slug} (static)`);
 }
 
 // Index privat (noindex) cu toate demo-urile existente în dist/.

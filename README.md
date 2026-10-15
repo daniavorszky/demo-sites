@@ -15,6 +15,7 @@ Conținutul rămâne verbatim; schimbarea lui e upsell-ul.
 | `src/pages/index.astro` | Compune pagina din `home.json`: o secțiune apare doar dacă există în JSON. |
 | `src/styles/global.css` | Trei skin-uri (`calm`, `bold`, `warm`) ca variabile CSS; se alege din `home.json → site.skin`. |
 | `clients/<slug>/home.json` | Un folder per client. `_exemplu` = toate secțiunile (date fictive); `devadent`, `just4kids` = teste reale. |
+| `static/<slug>/` | Demo-uri statice gata făcute (ex. exporturi Shuffle) copiate ca atare în `dist/<slug>/`; `_meta.json` dă eticheta din index. |
 | `tools/build-all.mjs` | Construiește toate demo-urile în `dist/<slug>/` + index privat. E build command-ul din Cloudflare Pages. |
 
 ## Fluxul pentru un client (5 pași)

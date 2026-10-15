@@ -1,0 +1,20 @@
+.j4k-reveal {
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.j4k-reveal.j4k-is-hidden {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+.j4k-img-zoom {
+  transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .j4k-reveal,
+  .j4k-img-zoom {
+    transition: none;
+  }
+}
+
