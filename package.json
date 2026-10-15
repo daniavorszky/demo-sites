@@ -16,7 +16,8 @@
     "fidelity": "node tools/fidelity.mjs",
     "landing": "node tools/landing.mjs",
     "shots": "node tools/shots.mjs",
-    "reskin": "node tools/reskin.mjs"
+    "reskin": "node tools/reskin.mjs",
+    "finalizeaza": "node tools/finalize.mjs"
   },
   "keywords": [],
   "author": "",

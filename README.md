@@ -127,3 +127,11 @@ partea pe care o înlocuiești cu `home.json`.
 O variantă = skin (culori, fonturi) + așezare: `hero` (`split` · `cover` poză pe tot ecranul · `centered`) și `services`
 (`columns` · `cards` · `rows`). Presetările sunt în `tools/presets.mjs`; o presetare nouă = o linie acolo și apare automat
 pe pagina de variante și în `npm run reskin`.
+
+## Fluxul scurt (3 pași)
+
+1. `npm run new-client -- <slug>` (URL, firmă, persoană de contact) → extracție, mapare, validare, push.
+   Primești pagina de variante: `https://demo.digitalguild.agency/_v/<slug>/?eu=1`.
+2. Alegi varianta.
+3. `npm run finalizeaza -- <slug> <varianta> --push` → aplică varianta, oprește pagina de variante, face capturile,
+   generează landingul `/<slug>-propunere/` și afișează linkul de trimis `?r=Contact_Firma`.

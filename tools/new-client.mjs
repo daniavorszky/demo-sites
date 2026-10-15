@@ -27,5 +27,5 @@ try {
   execSync(`node tools/extract.mjs ${JSON.stringify(url)} clients/${slug}/raw.json`, { stdio: "inherit" });
 } catch { console.error("Extracția a eșuat — vezi README (site randat din JS → salvează pagina și rulează extract.mjs pe fișier)."); }
 console.log(`\nUrmează: deschide Claude Code, lipește MAPPING_PROMPT.md, cu raw.json din clients/${slug}/ → src/data/home.json → mută-l în clients/${slug}/home.json.`);
-console.log(`Variante de design (după publish): https://demo.digitalguild.agency/_v/${slug}/?eu=1`);
-console.log(`Link de trimis după publish: https://demo.digitalguild.agency/${slug}/?r=${refTag(contact, company)}`);
+console.log(`Pasul următor: după publish, alegi o variantă la https://demo.digitalguild.agency/_v/${slug}/?eu=1`);
+console.log(`apoi: npm run finalizeaza -- ${slug} <varianta>  → landing + link de trimis`);

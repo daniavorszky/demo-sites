@@ -99,7 +99,7 @@ const variante = existsSync("dist/_v") ? readdirSync("dist/_v") : [];
 const rows = all.map((slug) => {
   const b = built.find((x) => x.slug === slug);
   const label = b ? `${b.name} <span style="color:#777">· ${b.source ?? ""} · ${b.date ?? ""}</span>` : slug;
-  const r = b ? refTag(b.contact, b.company) : "";
+  const r = b && slug.endsWith("-propunere") ? refTag(b.contact, b.company) : "";
   const share = r ? ` <br><small>link de trimis: <code>https://demo.digitalguild.agency/${slug}/?r=${r}</code></small>` : "";
   const v = variante.includes(slug) ? ` · <a href="/_v/${slug}/?eu=1">variante de design</a>` : "";
   return `<li><a href="/${slug}/?eu=1">${slug}</a> — ${label}${v}${share}</li>`;
