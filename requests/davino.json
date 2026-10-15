@@ -1,0 +1,17 @@
+{
+  "slug": "davino",
+  "shots": [
+    {
+      "name": "before",
+      "url": "https://davino.ro/"
+    }
+  ],
+  "extract": "https://davino.ro/",
+  "pages": [
+    "https://davino.ro/vinul",
+    "https://davino.ro/terroir",
+    "https://davino.ro/experienta",
+    "https://davino.ro/contact"
+  ],
+  "id": "mv9kn1fo"
+}
