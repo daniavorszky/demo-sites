@@ -121,7 +121,7 @@ footer{border-top:1px solid var(--rule);padding:22px 0 40px;color:var(--ink-soft
     <p>Îți spunem în 15 minute ce presupune trecerea la noul site: etape, durată, cost. Fără obligații.</p>
     <div class="row">
       <a class="btn wa big" href="https://wa.me/${esc(agency.whatsapp)}?text=${waText}" target="_blank" rel="noopener">Scrie-ne pe WhatsApp</a>
-      <a class="btn big" href="tel:${esc(agency.phone.replace(/\\s+/g, ""))}">Sună: ${esc(agency.phone)}</a>
+      <a class="btn big" href="tel:${esc(agency.phone.replace(/\s+/g, ""))}">Sună: ${esc(agency.phone)}</a>
     </div>
   </section>
 

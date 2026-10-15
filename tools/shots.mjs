@@ -13,9 +13,10 @@ const b = await chromium.launch(process.env.CHROME ? { executablePath: process.e
 async function shoot(url, name) {
   const p = await b.newPage({ viewport: { width: 1280, height: 800 } });
   await p.goto(url + (url.includes("?") ? "&" : "?") + "eu=1", { waitUntil: "networkidle", timeout: 90000 }).catch(() => {});
-  await p.addStyleTag({ content: "*{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}" }).catch(() => {});
+  await p.addStyleTag({ content: "*{opacity:1!important;transition:none!important;animation:none!important}.et_pb_section,.et_pb_row,.et_pb_module,.et-waypoint{opacity:1!important;visibility:visible!important}" }).catch(() => {});
   await p.evaluate(async () => { for (let y = 0; y < document.body.scrollHeight; y += 600) { window.scrollTo(0, y); await new Promise((r) => setTimeout(r, 150)); } window.scrollTo(0, 0); });
-  await p.waitForTimeout(1000);
+  await p.waitForTimeout(2500);
+  await p.evaluate(() => document.querySelectorAll("video").forEach((v) => { v.pause(); }));
   await p.screenshot({ path: `${dir}/${name}-fold.jpg`, type: "jpeg", quality: 85 });
   await p.screenshot({ path: `${dir}/${name}-full.jpg`, type: "jpeg", quality: 80, fullPage: true });
   await p.close(); console.log("ok", name);
