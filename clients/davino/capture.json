@@ -1,25 +1,22 @@
 {
-  "at": "2026-10-15T13:26:11.497Z",
+  "at": "2026-10-15T13:34:38.782Z",
   "request": {
     "slug": "davino",
     "shots": [
       {
-        "name": "before",
-        "url": "https://davino.ro/"
+        "name": "check-variante",
+        "url": "https://demo.digitalguild.agency/_v/davino/"
+      },
+      {
+        "name": "check-editorial-cover",
+        "url": "https://demo.digitalguild.agency/_v/davino/editorial-cover/"
       }
     ],
-    "extract": "https://davino.ro/",
-    "pages": [
-      "https://davino.ro/vinul",
-      "https://davino.ro/terroir",
-      "https://davino.ro/experienta",
-      "https://davino.ro/contact"
-    ],
-    "id": "mv9kn1fo"
+    "id": "mv9kxrga"
   },
   "ok": [
-    "extract (7 blocuri, 9 imagini; 4 pagini în plus)",
-    "shot before"
+    "shot check-variante",
+    "shot check-editorial-cover"
   ],
   "errors": []
 }
