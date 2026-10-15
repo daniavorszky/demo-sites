@@ -32,7 +32,7 @@ un **landing de propunere** cu link urmărit (deschideri în panou + Slack).
 
 ## Ce e construit
 
-Repo: `github.com/daniavorszky/demo-sites` (branch `main`). Pe Mac: `~/websites/demo-sites` (fă `git pull`).
+Repo: `github.com/daniavorszky/demo-sites` (branch `main`). Pe Mac: `~/Code/demo-sites` (fă `git pull`).
 Publicat la `https://demo.digitalguild.agency/` (Cloudflare Pages, proiect `demo-sites`, build `npm run build:all`, output `dist`, `NODE_VERSION=22`).
 
 ```
