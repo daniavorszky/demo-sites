@@ -24,5 +24,5 @@ export type Home = {
   nav: Link[];
   sections: Section[];
   source: { url: string; extractedAt: string; notes?: string[] };
-  demo?: { agency?: string; note?: string };
+  demo?: { agency?: string; note?: string; company?: string; contact?: string };
 };

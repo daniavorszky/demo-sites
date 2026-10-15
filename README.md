@@ -23,28 +23,37 @@ Conținutul rămâne verbatim; schimbarea lui e upsell-ul.
 ```bash
 npm install                                  # o singură dată
 
-# 1. Extracție (10 min)
-node tools/extract.mjs https://site-client.ro        # → raw.json
+# 1. Client nou + extracție (10 min) — te întreabă URL-ul, numele firmei și persoana de contact
+npm run new-client -- numeclient             # → clients/numeclient/client.json + raw.json
 # dacă site-ul randează totul din JS și raw.json iese gol: salvează pagina din browser (Ctrl+S, „HTML only”) și
-node tools/extract.mjs pagina.html https://site-client.ro
+node tools/extract.mjs pagina.html https://site-client.ro clients/numeclient/raw.json
 
 # 2. Mapare (15–30 min, în Claude Code)
-#    Deschide Claude Code în folderul ăsta și lipește conținutul din MAPPING_PROMPT.md.
-#    Rezultat: src/data/home.json
+#    Deschide Claude Code în folderul ăsta și lipește conținutul din MAPPING_PROMPT.md (cu raw.json din clients/numeclient/).
+#    Rezultat: src/data/home.json → mută-l în clients/numeclient/home.json
 
 # 3. Verificare (1 min)
 node tools/validate.mjs                      # schema + „nimic inventat”
 
 # 4. Build + verificare vizuală (5 min)
 npm run dev                                  # http://localhost:4321
-#    schimbă site.skin în home.json dacă vrei alt look (calm / bold / warm)
+#    schimbă site.skin în home.json dacă vrei alt look (calm / bold / warm / editorial)
 
 # 5. Publicare (2 min) — Cloudflare Pages e conectat la repo-ul GitHub `demo-sites`
-mkdir clients/numeclient && mv src/data/home.json raw.json clients/numeclient/
 git add clients/numeclient && git commit -m "demo: numeclient" && git push
 #    Cloudflare rulează `npm run build:all` și publică la https://demo.digitalguild.agency/numeclient/
-#    Index privat (noindex): https://demo.digitalguild.agency/
+#    Index privat (noindex): https://demo.digitalguild.agency/ — are, pentru fiecare demo, „link de trimis”
 ```
+
+### Linkul pe care îl trimiți clientului
+
+Din `client.json` (firmă + persoană de contact) build-ul generează automat linkul cu marcaj de deschidere:
+
+`https://demo.digitalguild.agency/numeclient/?r=Ion-Popescu_Firma-SRL`
+
+Îl găsești pe index-ul privat (`/`) și îl afișează și `new-client`. Când clientul deschide linkul, panoul și Slack arată
+„deschis de Ion-Popescu_Firma-SRL”. Tu deschizi demo-urile cu `?eu=1` (din index) ca să nu fii numărat.
+Pentru demo-urile statice din `static/<slug>/` pui `company` și `contact` în `_meta.json`; beacon-ul se injectează la build.
 
 Pentru lucru local pe un client existent: `node tools/use.mjs clients/numeclient/home.json && npm run dev`.
 

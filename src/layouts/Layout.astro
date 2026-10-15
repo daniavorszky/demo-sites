@@ -68,7 +68,7 @@ const address = site.address ?? contact?.address;
         </p>
       </div>
     </footer>
-    <script is:inline define:vars={{ siteName: site.name }}>
+    <script is:inline define:vars={{ siteName: home.demo?.company ?? site.name }}>
       /* Contor de deschideri (ca la propuneri): o dată pe sesiune, fără roboți, fără browserul marcat cu ?eu=1. */
       (function () { try {
         var qs = new URLSearchParams(location.search);
