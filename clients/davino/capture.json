@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-15T13:23:06.769Z",
+  "request": {
+    "slug": "davino",
+    "shots": [
+      {
+        "name": "before",
+        "url": "https://davino.ro/"
+      }
+    ],
+    "extract": "https://davino.ro/",
+    "id": "mv9kj2lc"
+  },
+  "ok": [
+    "extract (9 imagini randate)",
+    "shot before"
+  ],
+  "errors": []
+}

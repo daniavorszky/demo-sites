@@ -1,0 +1,121 @@
+{
+  "source": {
+    "url": "https://davino.ro/",
+    "extractedAt": "2026-10-15T13:23:07.967Z",
+    "blocks": 0
+  },
+  "site": {
+    "title": "Acasa | Davino",
+    "metaDescription": "Prin vin, natura inscrie memoria unui an de intamplari.",
+    "lang": "ro",
+    "logo": "https://davino.ro/assets/images/davino-logo.png"
+  },
+  "nav": [
+    {
+      "label": "VINURI",
+      "href": "https://davino.ro/vinul"
+    },
+    {
+      "label": "RO",
+      "href": "https://davino.ro/"
+    },
+    {
+      "label": "EN",
+      "href": "https://davino.ro/en/"
+    },
+    {
+      "label": "01Acasa",
+      "href": "https://davino.ro/"
+    },
+    {
+      "label": "02Vinul",
+      "href": "https://davino.ro/vinul"
+    },
+    {
+      "label": "03Terroir",
+      "href": "https://davino.ro/terroir"
+    },
+    {
+      "label": "04Experienta",
+      "href": "https://davino.ro/experienta"
+    },
+    {
+      "label": "05News",
+      "href": "https://davino.ro/news"
+    },
+    {
+      "label": "05Contact",
+      "href": "https://davino.ro/contact"
+    }
+  ],
+  "contact": {
+    "phones": [],
+    "emails": [],
+    "addressCandidates": [],
+    "hoursCandidates": [],
+    "social": {}
+  },
+  "blocks": [],
+  "leftovers": [],
+  "renderedImages": [
+    {
+      "src": "https://davino.ro/assets/images/acasa-bkg.jpg",
+      "width": 560,
+      "height": 422,
+      "alt": "Acasa Background",
+      "kind": "img"
+    },
+    {
+      "src": "https://davino.ro/assets/images/vinul-bkg.jpg",
+      "width": 560,
+      "height": 420,
+      "alt": "Vinul Background",
+      "kind": "img"
+    },
+    {
+      "src": "https://davino.ro/assets/images/terroir-bkg.jpg",
+      "width": 560,
+      "height": 422,
+      "alt": "Terroir Background",
+      "kind": "img"
+    },
+    {
+      "src": "https://davino.ro/assets/images/experienta-bkg.jpg",
+      "width": 560,
+      "height": 422,
+      "alt": "Experienta Background",
+      "kind": "img"
+    },
+    {
+      "src": "https://davino.ro/assets/images/news-bkg.jpg",
+      "width": 563,
+      "height": 422,
+      "alt": "News Background",
+      "kind": "img"
+    },
+    {
+      "src": "https://davino.ro/assets/images/contact-bkg.jpg",
+      "width": 560,
+      "height": 422,
+      "alt": "Contact Background",
+      "kind": "img"
+    },
+    {
+      "src": "https://davino.ro/assets/images/logo-davino.png",
+      "width": 391,
+      "height": 87,
+      "alt": "Davino Logo",
+      "kind": "img"
+    },
+    {
+      "src": "https://davino.ro/assets/images/Background-Homepage.jpg",
+      "kind": "background",
+      "near": "VINURI\nPrin vin, natura inscrie\nmemoria unui an de intamplari.\n\nEvenimente subti"
+    },
+    {
+      "src": "https://davino.ro/assets/images/background-menu.jpg",
+      "kind": "background",
+      "near": ""
+    }
+  ]
+}
