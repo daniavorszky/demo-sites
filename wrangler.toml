@@ -1,0 +1,12 @@
+# Cloudflare Pages (DGA account): demo-uri de homepage. Build prin integrarea Git a Pages (npm run build:all → dist/).
+name = "demo-sites"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-10-01"
+
+# Contorul de deschideri scrie în ACELAȘI KV ca dga-propuneri (dga-propuneri-deschideri), cu chei prefixate "demo:".
+# Panoul este cel din dga-propuneri (PANOU_CALE acolo); demo-sites nu are panou propriu.
+[[kv_namespaces]]
+binding = "DESCHIDERI"
+id = "b7bbecd0c39e4526a978ade23fd0f1ee"
+
+# Secret (dashboard → Workers & Pages → demo-sites → Settings → Variables and Secrets): SLACK_WEBHOOK_URL (același ca la dga-propuneri).

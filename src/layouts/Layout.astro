@@ -66,5 +66,22 @@ const address = site.address ?? contact?.address;
         </p>
       </div>
     </footer>
+    <script is:inline define:vars={{ siteName: site.name }}>
+      /* Contor de deschideri (ca la propuneri): o dată pe sesiune, fără roboți, fără browserul marcat cu ?eu=1. */
+      (function () { try {
+        var qs = new URLSearchParams(location.search);
+        if (qs.get("eu") === "0") localStorage.removeItem("dga_owner");
+        if (qs.get("eu") === "1") localStorage.setItem("dga_owner", "1");
+        var owner = localStorage.getItem("dga_owner") === "1";
+        if (owner) { var b = document.createElement("div"); b.textContent = "Deschideri ignorate (eu=1) · ?eu=0 ca să fii numărat";
+          b.style.cssText = "position:fixed;left:12px;bottom:12px;z-index:2147483647;padding:6px 10px;border-radius:6px;background:rgba(23,19,15,.85);color:#F3EEE6;font:12px/1.3 -apple-system,BlinkMacSystemFont,sans-serif;pointer-events:none"; document.body.appendChild(b); }
+        var key = "dga_seen:" + location.pathname;
+        if (!owner && !sessionStorage.getItem(key) && location.hostname.indexOf("digitalguild.agency") > -1) {
+          sessionStorage.setItem(key, "1");
+          setTimeout(function () { fetch("/api/view", { method: "POST", keepalive: true, headers: { "content-type": "application/json" },
+            body: JSON.stringify({ path: location.pathname, r: qs.get("r") || "", name: siteName }) }).catch(function () {}); }, 1500);
+        }
+      } catch (e) {} })();
+    </script>
   </body>
 </html>
