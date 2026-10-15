@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * Trimite o cerere de captură către GitHub Actions și așteaptă rezultatul (sandbox-ul nu ajunge la site-urile clienților).
- *   node tools/remote.mjs <slug> --extract <url> [--shot before=<url>] [--shot after=build:<demoSlug>]
+ *   node tools/remote.mjs <slug> --extract <url> [--page <url> …] [--shot before=<url>] [--shot after=build:<demoSlug>]
  * Scrie requests/<slug>.json, face commit + push, apoi trage repo-ul până apare clients/<slug>/capture.json nou.
  */
 import { writeFileSync, mkdirSync, existsSync, readFileSync } from "node:fs";
@@ -13,6 +13,7 @@ if (!slug) { console.error("Folosire: node tools/remote.mjs <slug> [--extract <u
 const req = { slug, shots: [] };
 for (let i = 1; i < args.length; i++) {
   if (args[i] === "--extract") req.extract = args[++i];
+  else if (args[i] === "--page") (req.pages ||= []).push(args[++i]);
   else if (args[i] === "--shot") { const [name, v] = args[++i].split(/=(.*)/s); req.shots.push(v.startsWith("build:") ? { name, build: v.slice(6) } : { name, url: v }); }
 }
 mkdirSync("requests", { recursive: true });
