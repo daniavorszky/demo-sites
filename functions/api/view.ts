@@ -39,7 +39,8 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env, waitUnti
 
   const url = `https://demo.digitalguild.agency/${slug}/`;
   // Panoul e cel din dga-propuneri; PANOU_CALE (secret) trebuie să aibă aceeași valoare ca acolo.
-  const cale = (env.PANOU_CALE || "").replace(/^\/+|\/+$/g, "");
+  // Acceptă fie calea goală ("panou-abc"), fie URL-ul complet al panoului; păstrează doar ultimul segment.
+  const cale = (env.PANOU_CALE || "").replace(/^https?:\/\/[^/]+/, "").replace(/^\/+|\/+$/g, "").split("/").pop() || "";
   const panou = cale ? ` · <https://propuneri.digitalguild.agency/${cale}/|Panou deschideri>` : "";
   const text = `*Demo ${client}* a fost deschis${who ? ` de *${who}*` : ""}\n${time} · ${place} · ${device(ua)}\n<${url}?eu=1|${url}>${panou}`;
   if (env.SLACK_WEBHOOK_URL) {
