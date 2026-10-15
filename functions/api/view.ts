@@ -2,7 +2,7 @@
 // Scrie în KV-ul partajat cu dga-propuneri (binding DESCHIDERI) sub cheia "demo:<slug>", ca să apară în același panou.
 import { BOTS, device } from "../_lib/device";
 
-interface Env { DESCHIDERI: KVNamespace; SLACK_WEBHOOK_URL?: string }
+interface Env { DESCHIDERI: KVNamespace; SLACK_WEBHOOK_URL?: string; PANOU_CALE?: string }
 
 export const onRequestPost: PagesFunction<Env> = async ({ request, env, waitUntil }) => {
   const ua = request.headers.get("user-agent") || "";
@@ -38,7 +38,10 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env, waitUnti
   } catch (e) { console.error("contor deschideri:", e); }
 
   const url = `https://demo.digitalguild.agency/${slug}/`;
-  const text = `*Demo ${client}* a fost deschis${who ? ` de *${who}*` : ""}\n${time} · ${place} · ${device(ua)}\n<${url}?eu=1|${url}>`;
+  // Panoul e cel din dga-propuneri; PANOU_CALE (secret) trebuie să aibă aceeași valoare ca acolo.
+  const cale = (env.PANOU_CALE || "").replace(/^\/+|\/+$/g, "");
+  const panou = cale ? ` · <https://propuneri.digitalguild.agency/${cale}/|Panou deschideri>` : "";
+  const text = `*Demo ${client}* a fost deschis${who ? ` de *${who}*` : ""}\n${time} · ${place} · ${device(ua)}\n<${url}?eu=1|${url}>${panou}`;
   if (env.SLACK_WEBHOOK_URL) {
     waitUntil(fetch(env.SLACK_WEBHOOK_URL, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ text }) }).catch(() => {}));
   }
