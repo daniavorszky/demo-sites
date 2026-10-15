@@ -12,7 +12,9 @@ const s = Astro.props as P;
       <dl class="mt-8 space-y-4 text-lg">
         {s.phone && <div><dt class="text-sm text-ink-soft">Telefon</dt><dd><a href={`tel:${s.phone.replace(/\s/g, "")}`} class="font-bold">{s.phone}</a></dd></div>}
         {s.email && <div><dt class="text-sm text-ink-soft">Email</dt><dd><a href={`mailto:${s.email}`} class="font-bold">{s.email}</a></dd></div>}
-        {s.address && <div><dt class="text-sm text-ink-soft">Adresă</dt><dd>{s.address}</dd></div>}
+        {s.addresses?.length
+          ? s.addresses.map((a) => <div><dt class="text-sm text-ink-soft">{a.label ?? "Adresă"}</dt><dd>{a.address}</dd></div>)
+          : s.address && <div><dt class="text-sm text-ink-soft">Adresă</dt><dd>{s.address}</dd></div>}
         {s.hours?.length && <div><dt class="text-sm text-ink-soft">Program</dt><dd>{s.hours.map((h) => <p>{h}</p>)}</dd></div>}
       </dl>
     </div>

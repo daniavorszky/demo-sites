@@ -13,7 +13,7 @@ export type Section =
   | { type: "partners"; _source?: string; title?: string; logos: Img[] }
   | { type: "faq"; _source?: string; title?: string; items: { q: string; a: string }[] }
   | { type: "cta"; _source?: string; title: string; text?: string; button?: Link }
-  | { type: "contact"; _source?: string; title?: string; text?: string; phone?: string; email?: string; address?: string; hours?: string[]; mapEmbed?: string };
+  | { type: "contact"; _source?: string; title?: string; text?: string; phone?: string; email?: string; address?: string; addresses?: { label?: string; address: string }[]; hours?: string[]; mapEmbed?: string };
 
 export type Home = {
   site: {

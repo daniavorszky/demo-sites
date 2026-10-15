@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 /**
  * Pasul final, după ce ai ales varianta de design:
- *   node tools/finalize.mjs <slug> <varianta> [--push]
+ *   node tools/finalize.mjs <slug> <varianta> --push     capturi în GitHub Actions (implicit; cere push)
+ *   node tools/finalize.mjs <slug> <varianta> --local    capturi locale cu shots.mjs (doar dacă site-ul e accesibil de aici)
  * Aplică varianta pe demo, oprește pagina de variante (build mai rapid), face capturile (site actual + propunere),
  * generează landingul /<slug>-propunere/ cu datele din client.json și afișează linkul de trimis clientului.
  */
@@ -12,7 +13,10 @@ import { refTag } from "./beacon.mjs";
 
 const [slug, variant] = process.argv.slice(2);
 const push = process.argv.includes("--push");
-if (!slug || !PRESETS[variant]) { console.error(`Folosire: node tools/finalize.mjs <slug> <varianta> [--push]\nVariante: ${Object.keys(PRESETS).join(", ")}`); process.exit(1); }
+const local = process.argv.includes("--local");
+if (!slug || !PRESETS[variant]) { console.error(`Folosire: node tools/finalize.mjs <slug> <varianta> --push|--local [--push]\nVariante: ${Object.keys(PRESETS).join(", ")}`); process.exit(1); }
+// Capturile prin GitHub Actions pornesc de la repo-ul publicat, deci varianta trebuie împinsă înainte.
+if (!local && !push) { console.error("Capturile rulează în GitHub Actions și cer push: adaugă --push (sau --local, dacă site-ul e accesibil de aici)."); process.exit(1); }
 
 const cp = `clients/${slug}/client.json`;
 const client = JSON.parse(readFileSync(cp, "utf8"));
@@ -28,17 +32,26 @@ client.landing = { ...(client.landing || {}), newPath: target, varianta: variant
 writeFileSync(cp, JSON.stringify(client, null, 2) + "\n");
 console.log(`${target}: varianta ${variant}; pagina de variante oprită.`);
 
-execSync(`node tools/build-all.mjs ${target}`, { stdio: "inherit" });
-const port = 5200 + Math.floor(Math.random() * 500);
-const srv = spawn("npx", ["serve", "dist", "-l", String(port)], { stdio: "ignore", detached: true });
-await new Promise((r) => setTimeout(r, 3000));
-try {
-  execSync(`node tools/shots.mjs ${slug} ${JSON.stringify(client.url)} http://localhost:${port}/${target}/`, { stdio: "inherit" });
-  execSync(`node tools/landing.mjs ${slug}`, { stdio: "inherit" });
-} finally { try { process.kill(-srv.pid); } catch {} }
+if (local) {
+  execSync(`node tools/build-all.mjs ${target}`, { stdio: "inherit" });
+  const port = 5200 + Math.floor(Math.random() * 500);
+  const srv = spawn("npx", ["serve", "dist", "-l", String(port)], { stdio: "ignore", detached: true });
+  await new Promise((r) => setTimeout(r, 3000));
+  try {
+    execSync(`node tools/shots.mjs ${slug} ${JSON.stringify(client.url)} http://localhost:${port}/${target}/`, { stdio: "inherit" });
+  } finally { try { process.kill(-srv.pid); } catch {} }
+} else {
+  // Varianta aleasă intră în repo; Actions construiește demo-ul și îl fotografiază („after”).
+  // „before” vine din captura inițială; îl refacem doar dacă lipsește.
+  execSync(`git add clients/${slug} clients/${target} && (git diff --cached --quiet || git commit -q -m "propunere ${slug}: ${variant} (pregătire)")`, { stdio: "inherit" });
+  const shots = [`--shot after=build:${target}`];
+  if (!existsSync(`clients/${slug}/shots/before-full.jpg`)) shots.unshift(`--shot before=${JSON.stringify(client.url)}`);
+  execSync(`node tools/remote.mjs ${slug} ${shots.join(" ")}`, { stdio: "inherit" });
+}
+execSync(`node tools/landing.mjs ${slug}`, { stdio: "inherit" });
 
 const link = `https://demo.digitalguild.agency/${slug}-propunere/?r=${refTag(client.contact, client.company)}`;
-if (push) execSync(`git add clients/${slug} clients/${target} static/${slug}-propunere && git commit -m "propunere ${slug}: ${variant}" && git push`, { stdio: "inherit" });
+if (push) execSync(`git add clients/${slug} clients/${target} static/${slug}-propunere && (git diff --cached --quiet || git commit -q -m "propunere ${slug}: ${variant}") && git push`, { stdio: "inherit" });
 console.log(`\n${push ? "Publicat (în ~2 min)." : "Gata local; publică cu git push."}`);
 console.log(`Verifică: https://demo.digitalguild.agency/${slug}-propunere/?eu=1`);
 console.log(`Link de trimis lui ${client.contact || "client"}: ${link}`);

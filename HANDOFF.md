@@ -87,10 +87,10 @@ lor; site cu poartă 18+; al doilea sediu (Ceptura) nu încape în componenta de
 
 ## Ce a rămas de făcut
 
-- [ ] Davino: Dan alege varianta → `npm run finalizeaza -- davino <varianta> --push`. **Atenție:** `finalize.mjs` face capturile
-      cu `shots.mjs` local, care nu ajunge la davino.ro din sandbox. De schimbat ca să folosească
-      `remote.mjs <slug> --shot before=<url> --shot after=build:<slug>` (before există deja din capture) — prima rulare reală.
-- [ ] Componenta contact: suport pentru mai multe adrese (Davino: București + Ceptura).
+- [ ] Davino: Dan alege varianta → `npm run finalizeaza -- davino <varianta> --push` (capturile „after” rulează acum în
+      GitHub Actions prin `remote.mjs`; „before” există deja din capture). Prima rulare reală — urmărește tab-ul Actions.
+- [x] `finalize.mjs`: capturi prin GitHub Actions implicit (cere `--push`); `--local` păstrează varianta cu `shots.mjs`. (2026-10-15)
+- [x] Componenta contact: `addresses[]` cu `label` verbatim (Davino: Bucuresti + Ceptura); validator OK, build:all OK. (2026-10-15)
 - [ ] `PANOU_CALE` în Cloudflare (demo-sites) trebuie să fie doar calea (`panou-…`), nu URL întreg — codul tolerează, dar corectează.
 - [ ] Opțional: preluat imagini mai mari din site (hero-ul J4K are doar 1024 px, se vede moale în variantele `cover`).
 - [ ] Opțional: întrebările Formwise pentru AppSumo (versiunea ≤850 caractere e în conversația din 15 oct), decizie template-uri
@@ -107,7 +107,7 @@ lor; site cu poartă 18+; al doilea sediu (Ceptura) nu încape în componenta de
 - Cu `wrangler.toml` în repo, variabilele din dashboard de tip **Text** se șterg la deploy → se pun ca **Secret**
   (`SLACK_WEBHOOK_URL`, `PANOU_CALE`).
 - Deschide-ți propriile linkuri cu `?eu=1`.
-- Pe Mac, VM-ul de device nu poate șterge fișiere (git lasă `.lock`-uri) — lucrul în git se face din clona din cloud.
+- Pe Mac mini, clona `~/Code/demo-sites` merge local (după `npm ci` pe macOS — `node_modules` din clona Linux nu are binarele rolldown).
 
 ## Comenzi
 
@@ -120,7 +120,7 @@ node tools/use.mjs clients/<slug>/home.json && node tools/validate.mjs src/data/
 node tools/build-all.mjs <slug>          # build local al unui client (+ variante dacă variante:true)
 git add -A && git commit -m "demo: <slug>" && git push   # Cloudflare publică în ~3–5 min
 # după alegerea variantei:
-npm run finalizeaza -- <slug> <varianta> --push          # variante: editorial, editorial-cover, editorial-centered, calm,
+npm run finalizeaza -- <slug> <varianta> --push          # capturi în Actions (--local = shots.mjs local); variante: editorial, editorial-cover, editorial-centered, calm,
                                                           # calm-centered, bold-cover, bold-rows, warm, warm-cover
 npm run reskin -- <slug> <varianta> --push               # schimbă varianta după finalizare
 npm run build:all                                         # tot site-ul (ce rulează Cloudflare)

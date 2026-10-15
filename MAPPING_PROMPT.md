@@ -39,7 +39,7 @@ Rezultatul este fișierul `src/data/home.json`. Lucrezi strict cu ce există în
 | Logo-uri de firme/certificări | `partners` |
 | Perechi întrebare/răspuns | `faq` |
 | Un singur titlu + un buton, spre final | `cta` |
-| Telefon, email, adresă, program | `contact` |
+| Telefon, email, adresă, program | `contact` (mai multe sedii → `addresses[]`, cu `label` exact ca pe site, ex. orașul) |
 | Listă de dotări, etape, beneficii, activități (nu servicii vândute) + paragrafele din jur | `list` (paragraphs → listTitle → items → outro) |
 | Orice paragraf lung care nu intră în cele de mai sus | `longText` |
 

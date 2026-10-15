@@ -203,12 +203,21 @@
     },
     {
       "type": "contact",
-      "_source": "pagina /contact: date de contact + nota despre distribuție (Ceptura: Sat Ceptura de jos, Nr. 59, Comuna Ceptura, Jud. Prahova — pus în notă, componenta are o singură adresă)",
+      "_source": "pagina /contact: date de contact, nota despre distribuție și cele două adrese (Bucuresti, Ceptura)",
       "title": "Contact",
       "text": "DAVINO nu comercializeaza produse in mod direct. Vinurile DAVINO sunt distribuite exclusiv pe baza de contract, preponderent in sistem on-trade pentru consum in restaurant. DAVINO se comercializeaza pentru consum individual numai in magazine specializate in vanzare de vin, precum si in cateva magazine virtuale.",
       "phone": "+40 0727328466",
       "email": "office@davino.ro",
-      "address": "Str.Arh.Stefan Burcus, Nr. 6, Sector 1, Bucuresti"
+      "addresses": [
+        {
+          "label": "Bucuresti",
+          "address": "Str.Arh.Stefan Burcus, Nr. 6, Sector 1, Bucuresti"
+        },
+        {
+          "label": "Ceptura",
+          "address": "Sat Ceptura de jos, Nr. 59, Comuna Ceptura, Jud. Prahova"
+        }
+      ]
     }
   ],
   "source": {
@@ -219,7 +228,6 @@
       "Site-ul are poartă de vârstă (18+) și banner de cookies; conținutul a fost citit după ele.",
       "Experienta: doar titlurile celor șase etape (textele integrale, ~1.500 de cuvinte, rămân pe pagina Experienta).",
       "Vinuri: imaginile sticlelor sunt verticale (841×1983) și doar 8 din 17 s-au încărcat în carusel — omise.",
-      "Al doilea sediu (Ceptura, Sat Ceptura de jos, Nr. 59, Comuna Ceptura, Jud. Prahova) nu are loc în componenta de contact — de adăugat dacă alegem varianta.",
       "Textul sursă nu are diacritice; păstrat ca atare."
     ]
   },

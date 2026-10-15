@@ -551,6 +551,25 @@
         "address": {
           "type": "string"
         },
+        "addresses": {
+          "type": "array",
+          "description": "Mai multe sedii/adrese, fiecare cu eticheta exact ca pe site (ex. orașul). Dacă există, înlocuiește address.",
+          "items": {
+            "type": "object",
+            "required": [
+              "address"
+            ],
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "address": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
         "hours": {
           "type": "array",
           "items": {
