@@ -34,7 +34,11 @@ if (!existsSync(rawPath)) {
 const raw = JSON.parse(readFileSync(rawPath, "utf8"));
 // Normalizare: minuscule, fără punctuație (o virgulă în loc de punct și virgulă nu e conținut nou), spații simple.
 const norm = (s) => String(s).toLowerCase().replace(/[„”"'«»;:,.!?()\-–—/]/g, " ").replace(/\s+/g, " ").trim();
-const corpus = norm(JSON.stringify(raw));
+// Valorile text din raw, nu JSON-ul serializat: acolo un rând nou apare ca „\n” și lipește cuvintele de litera „n”.
+const rawStrings = [];
+const collect = (v) => { if (typeof v === "string") rawStrings.push(v); else if (Array.isArray(v)) v.forEach(collect); else if (v && typeof v === "object") Object.values(v).forEach(collect); };
+collect(raw);
+const corpus = norm(rawStrings.join(" "));
 
 // Toate string-urile de conținut din home.json (ignorăm chei tehnice).
 const skipKeys = new Set(["type", "_source", "href", "src", "extractedAt", "url", "notes", "language", "mapEmbed", "logo", "skin", "hero", "services"]);

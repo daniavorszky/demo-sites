@@ -96,11 +96,11 @@ for (const f of reqs) {
         const raw = JSON.parse(readFileSync(`${dir}/raw.json`, "utf8"));
         const r = await renderedImages(req.extract);
         raw.renderedImages = r.images;
-        raw.pages = [{ url: req.extract, title: r.title, blocks: r.blocks }];
+        raw.pages = [{ url: req.extract, title: r.title, text: r.text, blocks: r.blocks }];
         let txt = `### ${req.extract}\n${r.text}\n`;
         for (const u of req.pages || []) {
           const q = await renderedImages(u);
-          raw.pages.push({ url: u, title: q.title, blocks: q.blocks, images: q.images });
+          raw.pages.push({ url: u, title: q.title, text: q.text, blocks: q.blocks, images: q.images });
           txt += `\n### ${u}\n${q.text}\n`;
         }
         writeFileSync(`${dir}/raw.json`, JSON.stringify(raw, null, 2));

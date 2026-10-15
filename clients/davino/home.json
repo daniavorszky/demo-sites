@@ -1,0 +1,229 @@
+{
+  "site": {
+    "name": "Davino",
+    "language": "ro",
+    "logo": "https://davino.ro/assets/images/logo-davino.png",
+    "phone": "+40 0727328466",
+    "email": "office@davino.ro",
+    "address": "Str.Arh.Stefan Burcus, Nr. 6, Sector 1, Bucuresti",
+    "skin": "editorial"
+  },
+  "nav": [
+    {
+      "label": "Vinul",
+      "href": "https://davino.ro/vinul"
+    },
+    {
+      "label": "Terroir",
+      "href": "https://davino.ro/terroir"
+    },
+    {
+      "label": "Experienta",
+      "href": "https://davino.ro/experienta"
+    },
+    {
+      "label": "News",
+      "href": "https://davino.ro/news"
+    },
+    {
+      "label": "Contact",
+      "href": "https://davino.ro/contact"
+    }
+  ],
+  "sections": [
+    {
+      "type": "hero",
+      "_source": "homepage (după poarta de vârstă): titlu + paragraf + buton; imaginea = fundalul CSS al paginii",
+      "title": "Prin vin, natura inscrie memoria unui an de intamplari.",
+      "text": "Evenimente subtile si trecatoare pentru unii: vant, ploaie, soare. Conditii esentiale pentru cei care au stiinta de a le valorifica intr-un vin special: deopotriva creatie si straduinta unui act de auto-depasire, reluat an de an.",
+      "image": {
+        "src": "https://davino.ro/assets/images/Background-Homepage.jpg",
+        "alt": ""
+      },
+      "cta": {
+        "label": "DESCOPERA",
+        "href": "https://davino.ro/vinul"
+      }
+    },
+    {
+      "type": "services",
+      "_source": "pagina /vinul: cele 17 vinuri cu soiurile (fără descrieri pe pagina de listă)",
+      "title": "Vinuri",
+      "items": [
+        {
+          "title": "FLAMBOYANT",
+          "href": "https://davino.ro/vinul",
+          "text": "Cabernet Sauvignon, Merlot & Feteasca Neagra"
+        },
+        {
+          "title": "DOMAINE CEPTURA ROUGE",
+          "href": "https://davino.ro/vinul",
+          "text": "Cabernet Sauvignon, Merlot & Feteasca Neagra"
+        },
+        {
+          "title": "DOMAINE CEPTURA ROSE",
+          "href": "https://davino.ro/vinul",
+          "text": "Merlot & Cabernet Sauvigno"
+        },
+        {
+          "title": "DOMAINE CEPTURA BLANC",
+          "href": "https://davino.ro/vinul",
+          "text": "Sauvignon Blanc, Feteasca Alba & Riesling Italico"
+        },
+        {
+          "title": "REVELATIO",
+          "href": "https://davino.ro/vinul",
+          "text": "Sauvignon Blanc & Feteasca Alba"
+        },
+        {
+          "title": "REZERVA",
+          "href": "https://davino.ro/vinul",
+          "text": "Cabernet Sauvignon,Merlot & Feteasca Neagra"
+        },
+        {
+          "title": "IACOB ALB",
+          "href": "https://davino.ro/vinul",
+          "text": "Sauvignon Blanc & Feteasca Alba"
+        },
+        {
+          "title": "IACOB ROSU",
+          "href": "https://davino.ro/vinul",
+          "text": "Cabernet Sauvignon & Feteasca Neagra"
+        },
+        {
+          "title": "IACOB ROSE",
+          "href": "https://davino.ro/vinul",
+          "text": "Cabernet Sauvignon & Feteasca Neagra"
+        },
+        {
+          "title": "VAST ALB",
+          "href": "https://davino.ro/vinul"
+        },
+        {
+          "title": "VAST ROSU",
+          "href": "https://davino.ro/vinul"
+        },
+        {
+          "title": "VAST ROSE",
+          "href": "https://davino.ro/vinul"
+        },
+        {
+          "title": "FAURAR ALB",
+          "href": "https://davino.ro/vinul",
+          "text": "Sauvignon Blanc & Feteasca Alba & Riesling Italico"
+        },
+        {
+          "title": "FAURAR ROSU",
+          "href": "https://davino.ro/vinul",
+          "text": "Merlot & Cabernet Sauvignon Feteasca Neagra"
+        },
+        {
+          "title": "FAURAR ROSE",
+          "href": "https://davino.ro/vinul",
+          "text": "Rose Cabernet Sauvignon & Merlot"
+        },
+        {
+          "title": "ALBA VALAHICA",
+          "href": "https://davino.ro/vinul"
+        },
+        {
+          "title": "PURPURA VALAHIA",
+          "href": "https://davino.ro/vinul"
+        }
+      ]
+    },
+    {
+      "type": "services",
+      "_source": "pagina /terroir: cele patru secțiuni, text integral + imaginea fiecăreia",
+      "title": "Terroir",
+      "items": [
+        {
+          "title": "SOL",
+          "text": "Folosind tehnica culturala simplificata, eliminam pe cat posibil interventiile mecanice invazive asupra solului, reducand atat consumul de combustibil cat si amprenta de carbon. Pe dealurile dinspre vest, solul aprovizionat in argile cu continut ridicat de oxizi de fier este propice soiurilor de vinuri rosii. Pe dealurile dinspre est, avem o structura usoara de formatiune calcaroasa sarmatice care favorizeaza obtinerea vinurilor aromate. Solurile noastre au grad mare de eterogenitate.",
+          "image": {
+            "src": "https://davino.ro/assets/images/sol-image.jpg",
+            "alt": ""
+          }
+        },
+        {
+          "title": "CLIMA",
+          "text": "Climatul este unul temperat continental cu ierni reci si veri calde. Excesele continentului est-european atenuate datorita protectiei dealurilor subcarpatice in fata curentilor reci si prin patrunderea de mase de aer cald de origine mediteranean dinspre S, S-V de-a lungul Subcarpatilor.",
+          "image": {
+            "src": "https://davino.ro/assets/images/clima-image.jpg",
+            "alt": ""
+          }
+        },
+        {
+          "title": "PRECIPITATII",
+          "text": "Zona este caracterizata de valori heliotermice exceptionale pentru cultura vitei de vie: radiatie solara globala de peste 120-130 Kcal/cm2, insolatie ~ 2150-2200 ore si o suma a temperaturilor medii zilnice(mai mari de 0°C) de peste 4.000 grd. Temperatura medie anuala este de cca 10,6°C. Precipitatii cca. 600 mm medie anuala.",
+          "image": {
+            "src": "https://davino.ro/assets/images/precipitatii-image.jpg",
+            "alt": ""
+          }
+        },
+        {
+          "title": "OAMENII",
+          "text": "Oamenii locului traiesc prin viile lor. Sunt oameni inzestrati cu virtutea muncii, meritul rabdarii si pasiunea pentru vin.Cu acesti oameni iscusiti si blanzi mostenitori ai geniului locului, Davino pleaca an de an in lungul drum al vinului catre perfectiune.",
+          "image": {
+            "src": "https://davino.ro/assets/images/oamenii-image.jpg",
+            "alt": ""
+          }
+        }
+      ]
+    },
+    {
+      "type": "list",
+      "_source": "pagina /experienta: titlurile celor șase etape; textele (lungi) rămân pe pagina lor",
+      "title": "Experienta",
+      "image": {
+        "src": "https://davino.ro/assets/images/experienta-bkgr.jpg",
+        "alt": ""
+      },
+      "items": [
+        "Lucrarile Solului",
+        "Taierea",
+        "Lucrari Primavara",
+        "Normare si Cules in Verde",
+        "Cules",
+        "Fermentare, Maturare si Imbuteliere"
+      ],
+      "cta": {
+        "label": "DESCOPERA",
+        "href": "https://davino.ro/experienta"
+      }
+    },
+    {
+      "type": "cta",
+      "_source": "pagina /contact: titlul formularului + butonul",
+      "title": "Rezerva o vizita",
+      "button": {
+        "label": "Contacteaza-ne",
+        "href": "https://davino.ro/contact"
+      }
+    },
+    {
+      "type": "contact",
+      "_source": "pagina /contact: date de contact + nota despre distribuție (Ceptura: Sat Ceptura de jos, Nr. 59, Comuna Ceptura, Jud. Prahova — pus în notă, componenta are o singură adresă)",
+      "title": "Contact",
+      "text": "DAVINO nu comercializeaza produse in mod direct. Vinurile DAVINO sunt distribuite exclusiv pe baza de contract, preponderent in sistem on-trade pentru consum in restaurant. DAVINO se comercializeaza pentru consum individual numai in magazine specializate in vanzare de vin, precum si in cateva magazine virtuale.",
+      "phone": "+40 0727328466",
+      "email": "office@davino.ro",
+      "address": "Str.Arh.Stefan Burcus, Nr. 6, Sector 1, Bucuresti"
+    }
+  ],
+  "source": {
+    "url": "https://davino.ro/",
+    "extractedAt": "2026-10-15T13:30:00Z",
+    "notes": [
+      "Homepage-ul are doar hero-ul (titlu, un paragraf, buton). Restul secțiunilor vin, verbatim, din paginile /vinul, /terroir, /experienta și /contact.",
+      "Site-ul are poartă de vârstă (18+) și banner de cookies; conținutul a fost citit după ele.",
+      "Experienta: doar titlurile celor șase etape (textele integrale, ~1.500 de cuvinte, rămân pe pagina Experienta).",
+      "Vinuri: imaginile sticlelor sunt verticale (841×1983) și doar 8 din 17 s-au încărcat în carusel — omise.",
+      "Al doilea sediu (Ceptura, Sat Ceptura de jos, Nr. 59, Comuna Ceptura, Jud. Prahova) nu are loc în componenta de contact — de adăugat dacă alegem varianta.",
+      "Textul sursă nu are diacritice; păstrat ca atare."
+    ]
+  },
+  "demo": {
+    "agency": "Digital Guild"
+  }
+}
