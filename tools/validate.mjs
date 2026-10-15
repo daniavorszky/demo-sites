@@ -37,7 +37,7 @@ const norm = (s) => String(s).toLowerCase().replace(/[„”"'«»;:,.!?()\-–�
 const corpus = norm(JSON.stringify(raw));
 
 // Toate string-urile de conținut din home.json (ignorăm chei tehnice).
-const skipKeys = new Set(["type", "_source", "href", "src", "extractedAt", "url", "notes", "language", "mapEmbed", "logo"]);
+const skipKeys = new Set(["type", "_source", "href", "src", "extractedAt", "url", "notes", "language", "mapEmbed", "logo", "skin"]);
 const strings = [];
 const walk = (v, k) => {
   if (typeof v === "string") { if (!skipKeys.has(k) && v.trim().length > 3) strings.push(v); return; }

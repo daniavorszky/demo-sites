@@ -45,6 +45,21 @@
   --radius: 14px;
 }
 
+/* Skin „editorial”: direcție derivată din propunerea Shuffle/Opus pentru Just4Kids (crem + verde închis, serif pentru titluri). */
+[data-skin="editorial"] {
+  --bg: #f6f2ea;
+  --bg-alt: #ffffff;
+  --ink: #2a2622;
+  --ink-soft: #5f5852;
+  --rule: #e2dbd0;
+  --accent: #2f6b4f;
+  --accent-ink: #f6f2ea;
+  --accent-soft: #e4ede7;
+  --font: "Figtree", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fraunces", Georgia, serif;
+  --radius: 999px;
+}
+
 @theme inline {
   --color-bg: var(--bg);
   --color-bg-alt: var(--bg-alt);
@@ -55,6 +70,7 @@
   --color-accent-ink: var(--accent-ink);
   --color-accent-soft: var(--accent-soft);
   --font-sans: var(--font);
+  --font-display: var(--font-display, var(--font));
   --radius-ui: var(--radius);
 }
 
@@ -66,3 +82,17 @@ body { -webkit-font-smoothing: antialiased; }
 /* Măsură de citire pentru text lung */
 .prose-measure { max-width: 68ch; }
 .prose-measure p + p { margin-top: 1em; }
+
+/* Titlurile iau fontul de display al skin-ului (identic cu textul la skin-urile fără serif). */
+h1, h2, h3 { font-family: var(--font-display, var(--font)); }
+[data-skin="editorial"] h1, [data-skin="editorial"] h2, [data-skin="editorial"] h3 { font-weight: 500; letter-spacing: -0.01em; }
+[data-skin="editorial"] h1 { font-size: clamp(2.75rem, 6vw, 4.5rem); line-height: 1.02; }
+[data-skin="editorial"] .kicker { display: block; margin-bottom: 1rem; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); }
+[data-skin="editorial"] img { border-radius: 20px; }
+[data-skin="editorial"] .sec-services li { border-top-width: 1px; border-color: var(--rule); counter-increment: svc; }
+[data-skin="editorial"] .sec-services li::before { content: "0" counter(svc); display: block; margin-bottom: 1.25rem; font-size: 0.7rem; letter-spacing: 0.25em; color: var(--ink-soft); }
+[data-skin="editorial"] .sec-services { counter-reset: svc; }
+[data-skin="editorial"] .list-band { background: var(--accent); color: var(--accent-ink); border-radius: 20px; padding: 2rem; }
+[data-skin="editorial"] .list-band li span:last-child { color: inherit; }
+[data-skin="editorial"] .list-band .bullet { background: var(--accent-ink); opacity: .6; }
+[data-skin="editorial"] .list-band .list-title { color: inherit; }

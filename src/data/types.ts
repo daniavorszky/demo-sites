@@ -19,7 +19,7 @@ export type Home = {
   site: {
     name: string; tagline?: string; logo?: string; language?: string;
     phone?: string; email?: string; address?: string; social?: Record<string, string>;
-    skin?: "calm" | "bold" | "warm";
+    skin?: "calm" | "bold" | "warm" | "editorial";
   };
   nav: Link[];
   sections: Section[];

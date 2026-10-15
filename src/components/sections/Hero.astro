@@ -7,7 +7,7 @@ const hasImg = !!s.image?.src;
 <section class="border-b border-rule">
   <div class:list={["mx-auto max-w-6xl px-5 py-20 md:py-28", hasImg && "grid items-center gap-12 md:grid-cols-[1.15fr_1fr]"]}>
     <div class="max-w-3xl">
-      {s.subtitle && <p class="mb-4 text-base font-semibold text-accent">{s.subtitle}</p>}
+      {s.subtitle && <p class="kicker mb-4 text-base font-semibold text-accent">{s.subtitle}</p>}
       <h1 class="text-4xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">{s.title}</h1>
       {s.text && <p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft md:text-xl">{s.text}</p>}
       {(s.cta || s.ctaSecondary) && (
