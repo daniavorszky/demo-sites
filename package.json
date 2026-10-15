@@ -15,7 +15,8 @@
     "new-client": "node tools/new-client.mjs",
     "fidelity": "node tools/fidelity.mjs",
     "landing": "node tools/landing.mjs",
-    "shots": "node tools/shots.mjs"
+    "shots": "node tools/shots.mjs",
+    "reskin": "node tools/reskin.mjs"
   },
   "keywords": [],
   "author": "",

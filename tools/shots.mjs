@@ -2,7 +2,7 @@
 /**
  * Capturi pentru landing-ul de propunere: clients/<slug>/shots/{before,after}-{fold,full}.jpg
  *   npm i --no-save playwright   (o singură dată, local; nu e dependență a build-ului)
- *   node tools/shots.mjs <slug> <urlActual> <urlPropunere>
+ *   node tools/shots.mjs <slug> <urlActual> <urlPropunere>   („-” = sari peste captura respectivă)
  */
 import { chromium } from "playwright";
 import { mkdirSync } from "node:fs";
@@ -22,4 +22,5 @@ async function shoot(url, name) {
   await p.screenshot({ path: `${dir}/${name}-full.jpg`, type: "jpeg", quality: 80, fullPage: true });
   await p.close(); console.log("ok", name);
 }
-await shoot(before, "before"); await shoot(after, "after"); await b.close();
+if (before !== "-") await shoot(before, "before");
+if (after !== "-") await shoot(after, "after"); await b.close();
