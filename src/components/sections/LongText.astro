@@ -1,0 +1,10 @@
+---
+import type { Section } from "@/data/types";
+import Section_ from "./Section.astro";
+type P = Extract<Section, { type: "longText" }>;
+const s = Astro.props as P;
+---
+<Section_ narrow>
+  {s.title && <h2 class="mb-6 text-2xl font-extrabold tracking-tight md:text-3xl">{s.title}</h2>}
+  <div class="prose-measure leading-relaxed text-ink-soft">{s.paragraphs.map((p) => <p>{p}</p>)}</div>
+</Section_>

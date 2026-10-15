@@ -1,0 +1,66 @@
+{
+  "site": {
+    "name": "Deva Dent",
+    "tagline": "Cabinet stomatologic Deva",
+    "language": "ro",
+    "phone": "0770 911 328",
+    "address": "Str.Mihai Eminescu, Bl. 19B, Sc. A, Ap. 1, Deva",
+    "skin": "calm"
+  },
+  "nav": [
+    { "label": "Servicii", "href": "#servicii" },
+    { "label": "Ce spun clientii", "href": "#clienti" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "sections": [
+    {
+      "type": "hero",
+      "_source": "site.title (pagina nu are h1; textul din slider nu există în HTML) + meta description",
+      "title": "Cabinet stomatologic Deva",
+      "text": "Deva Dent - cabinet stomatologic din Deva ofera o intreaga gama de servicii stomatologice la standarde Europene! Dertartraj, Prophy Jet, Pedodontie,",
+      "cta": { "label": "Telefon : 0770 911 328", "href": "tel:0770911328" }
+    },
+    {
+      "type": "services",
+      "_source": "blocurile 4–7: patru linkuri către pagini de serviciu, fără descrieri în homepage",
+      "items": [
+        { "title": "Detartraj", "href": "http://www.devadent.ro/dertatraj-deva/" },
+        { "title": "Pedondotie", "href": "http://www.devadent.ro/pedodontia/" },
+        { "title": "Albire", "href": "http://www.devadent.ro/albire/" },
+        { "title": "Paradontologie", "href": "http://www.devadent.ro/parodontologia/" }
+      ]
+    },
+    {
+      "type": "testimonials",
+      "_source": "blocurile 8–11: h2 «Ce spun clientii» + două paragrafe; numele autorului era lipit la finalul citatului",
+      "title": "Ce spun clientii",
+      "items": [
+        { "quote": "Pentru toti cei care vor vizita aceasta pagina sa nu se gandeasca prea mult si sa isi faca de urgenta o progamare la DEVA DENT", "author": "Fulep Sebastian" },
+        { "quote": "Ne tratam atat noi cat si copiii nostri la aceasta clinica de cand s-a deschis. Doar cuvinte de lauda avem pentru tinerele doamne doctor de aici. Fara durere, fara stres, fara stat la cozi...e o placere sa mergi la stomatolog...daca se poate spune asta!", "author": "Andrea Florea" }
+      ]
+    },
+    {
+      "type": "contact",
+      "_source": "blocurile 0–3 și 13–14: orar, telefon, adresă, «Urgente»",
+      "title": "Date contact",
+      "text": "Urgente 0770 911 328",
+      "phone": "0770 911 328",
+      "address": "Str.Mihai Eminescu, Bl. 19B, Sc. A, Ap. 1, Deva",
+      "hours": ["Luni – Vineri 08:00 – 20:00", "Sambata: Inchis", "Duminica: Inchis"]
+    }
+  ],
+  "source": {
+    "url": "http://www.devadent.ro/",
+    "extractedAt": "2026-10-15T08:26:27Z",
+    "notes": [
+      "Pagina nu are h1; titlul hero vine din <title>, textul din meta description.",
+      "Textul din Slider Revolution este randat din JS și nu apare în HTML — nu a fost preluat.",
+      "h3 «Despre noi» există fără niciun paragraf sub el — secțiunea about a fost omisă.",
+      "Imaginea og (300×214) e sub 800px — hero-ul este tipografic.",
+      "Serviciile sunt doar linkuri, fără descrieri în homepage.",
+      "Numele autorilor testimonialelor erau în același paragraf cu citatul; au fost separate în câmpul author.",
+      "Meniul nu a putut fi extras (nav randat din JS); s-a generat o navigație cu ancore către secțiunile existente."
+    ]
+  },
+  "demo": { "agency": "Digital Guild", "note": "Designul este o propunere; textele nu au fost modificate." }
+}

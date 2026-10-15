@@ -1,0 +1,14 @@
+---
+import type { Section } from "@/data/types";
+type P = Extract<Section, { type: "cta" }>;
+const s = Astro.props as P;
+---
+<section class="py-16 md:py-24">
+  <div class="mx-auto max-w-6xl px-5">
+    <div class="rounded-ui bg-accent px-8 py-12 text-accent-ink md:px-14 md:py-16">
+      <h2 class="max-w-2xl text-3xl font-extrabold tracking-tight md:text-4xl">{s.title}</h2>
+      {s.text && <p class="mt-4 max-w-2xl text-lg opacity-90">{s.text}</p>}
+      {s.button && <a href={s.button.href} class="mt-8 inline-block rounded-ui bg-bg px-6 py-3 font-bold text-ink">{s.button.label}</a>}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,576 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Homepage demo content",
+  "description": "Tot conținutul unui homepage de demo. Regula: textul vine verbatim din site-ul sursă; nimic inventat. O secțiune lipsește dacă sursa nu are conținut pentru ea.",
+  "type": "object",
+  "required": [
+    "site",
+    "nav",
+    "sections",
+    "source"
+  ],
+  "properties": {
+    "site": {
+      "type": "object",
+      "required": [
+        "name"
+      ],
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "tagline": {
+          "type": "string"
+        },
+        "logo": {
+          "type": "string",
+          "description": "URL absolut al logo-ului din sursă"
+        },
+        "language": {
+          "type": "string",
+          "default": "ro"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "social": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "nav": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "label",
+          "href"
+        ],
+        "properties": {
+          "label": {
+            "type": "string"
+          },
+          "href": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "description": "În ordinea din sursă. Fiecare obiect are `type` și `_source` (de unde vine, pentru verificare).",
+      "items": {
+        "oneOf": [
+          {
+            "$ref": "#/$defs/hero"
+          },
+          {
+            "$ref": "#/$defs/services"
+          },
+          {
+            "$ref": "#/$defs/about"
+          },
+          {
+            "$ref": "#/$defs/longText"
+          },
+          {
+            "$ref": "#/$defs/team"
+          },
+          {
+            "$ref": "#/$defs/testimonials"
+          },
+          {
+            "$ref": "#/$defs/gallery"
+          },
+          {
+            "$ref": "#/$defs/partners"
+          },
+          {
+            "$ref": "#/$defs/faq"
+          },
+          {
+            "$ref": "#/$defs/cta"
+          },
+          {
+            "$ref": "#/$defs/contact"
+          },
+          {
+            "$ref": "#/$defs/list"
+          }
+        ]
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "url",
+        "extractedAt"
+      ],
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "extractedAt": {
+          "type": "string"
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Ce nu s-a putut mapa, ce a fost mutat în longText, imagini prea mici etc."
+        }
+      }
+    }
+  },
+  "$defs": {
+    "image": {
+      "type": "object",
+      "required": [
+        "src"
+      ],
+      "properties": {
+        "src": {
+          "type": "string"
+        },
+        "alt": {
+          "type": "string"
+        },
+        "width": {
+          "type": "integer"
+        },
+        "height": {
+          "type": "integer"
+        }
+      }
+    },
+    "link": {
+      "type": "object",
+      "required": [
+        "label",
+        "href"
+      ],
+      "properties": {
+        "label": {
+          "type": "string"
+        },
+        "href": {
+          "type": "string"
+        }
+      }
+    },
+    "hero": {
+      "type": "object",
+      "required": [
+        "type",
+        "title"
+      ],
+      "properties": {
+        "type": {
+          "const": "hero"
+        },
+        "_source": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "image": {
+          "$ref": "#/$defs/image"
+        },
+        "cta": {
+          "$ref": "#/$defs/link"
+        },
+        "ctaSecondary": {
+          "$ref": "#/$defs/link"
+        }
+      }
+    },
+    "services": {
+      "type": "object",
+      "required": [
+        "type",
+        "items"
+      ],
+      "properties": {
+        "type": {
+          "const": "services"
+        },
+        "_source": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "intro": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "title"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              },
+              "image": {
+                "$ref": "#/$defs/image"
+              },
+              "href": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "about": {
+      "type": "object",
+      "required": [
+        "type",
+        "title",
+        "paragraphs"
+      ],
+      "properties": {
+        "type": {
+          "const": "about"
+        },
+        "_source": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "paragraphs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "image": {
+          "$ref": "#/$defs/image"
+        },
+        "cta": {
+          "$ref": "#/$defs/link"
+        }
+      }
+    },
+    "longText": {
+      "type": "object",
+      "required": [
+        "type",
+        "paragraphs"
+      ],
+      "description": "Text care nu încape într-o secțiune scurtă. Se păstrează integral.",
+      "properties": {
+        "type": {
+          "const": "longText"
+        },
+        "_source": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "paragraphs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "team": {
+      "type": "object",
+      "required": [
+        "type",
+        "members"
+      ],
+      "properties": {
+        "type": {
+          "const": "team"
+        },
+        "_source": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "intro": {
+          "type": "string"
+        },
+        "members": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              },
+              "text": {
+                "type": "string"
+              },
+              "image": {
+                "$ref": "#/$defs/image"
+              }
+            }
+          }
+        }
+      }
+    },
+    "testimonials": {
+      "type": "object",
+      "required": [
+        "type",
+        "items"
+      ],
+      "properties": {
+        "type": {
+          "const": "testimonials"
+        },
+        "_source": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "quote"
+            ],
+            "properties": {
+              "quote": {
+                "type": "string"
+              },
+              "author": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "gallery": {
+      "type": "object",
+      "required": [
+        "type",
+        "images"
+      ],
+      "properties": {
+        "type": {
+          "const": "gallery"
+        },
+        "_source": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "images": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/image"
+          }
+        }
+      }
+    },
+    "partners": {
+      "type": "object",
+      "required": [
+        "type",
+        "logos"
+      ],
+      "properties": {
+        "type": {
+          "const": "partners"
+        },
+        "_source": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "logos": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/image"
+          }
+        }
+      }
+    },
+    "faq": {
+      "type": "object",
+      "required": [
+        "type",
+        "items"
+      ],
+      "properties": {
+        "type": {
+          "const": "faq"
+        },
+        "_source": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "q",
+              "a"
+            ],
+            "properties": {
+              "q": {
+                "type": "string"
+              },
+              "a": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "cta": {
+      "type": "object",
+      "required": [
+        "type",
+        "title"
+      ],
+      "properties": {
+        "type": {
+          "const": "cta"
+        },
+        "_source": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "button": {
+          "$ref": "#/$defs/link"
+        }
+      }
+    },
+    "contact": {
+      "type": "object",
+      "required": [
+        "type"
+      ],
+      "properties": {
+        "type": {
+          "const": "contact"
+        },
+        "_source": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "text": {
+          "type": "string"
+        },
+        "phone": {
+          "type": "string"
+        },
+        "email": {
+          "type": "string"
+        },
+        "address": {
+          "type": "string"
+        },
+        "hours": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "mapEmbed": {
+          "type": "string",
+          "description": "URL de embed Google Maps, doar dacă există în sursă"
+        }
+      }
+    },
+    "list": {
+      "type": "object",
+      "required": [
+        "type",
+        "items"
+      ],
+      "description": "O listă din sursă (dotări, etape, beneficii), cu paragrafe înainte și/sau după. Pentru liste care nu sunt servicii.",
+      "properties": {
+        "type": {
+          "const": "list"
+        },
+        "_source": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "paragraphs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "listTitle": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "outro": {
+          "type": "string"
+        },
+        "cta": {
+          "$ref": "#/$defs/link"
+        }
+      }
+    }
+  }
+}

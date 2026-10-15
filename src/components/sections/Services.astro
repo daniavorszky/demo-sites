@@ -1,0 +1,20 @@
+---
+import type { Section } from "@/data/types";
+import Section_ from "./Section.astro";
+import Heading from "./Heading.astro";
+type P = Extract<Section, { type: "services" }>;
+const s = Astro.props as P;
+const cols = s.items.length === 2 ? "md:grid-cols-2" : s.items.length === 4 ? "md:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-3";
+---
+<Section_ id="servicii">
+  <Heading title={s.title} intro={s.intro} />
+  <ul class:list={["grid gap-x-10 gap-y-12", cols]}>
+    {s.items.map((it) => (
+      <li class="border-t-2 border-accent pt-5">
+        {it.image?.src && <img src={it.image.src} alt={it.image.alt ?? ""} class="mb-4 aspect-[3/2] w-full rounded-ui object-cover" loading="lazy" />}
+        <h3 class="text-xl font-bold">{it.href ? <a href={it.href}>{it.title}</a> : it.title}</h3>
+        {it.text && <p class="mt-2 text-ink-soft">{it.text}</p>}
+      </li>
+    ))}
+  </ul>
+</Section_>

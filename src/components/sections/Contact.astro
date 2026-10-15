@@ -1,0 +1,21 @@
+---
+import type { Section } from "@/data/types";
+import Section_ from "./Section.astro";
+type P = Extract<Section, { type: "contact" }>;
+const s = Astro.props as P;
+---
+<Section_ id="contact">
+  <div class:list={["grid gap-10", s.mapEmbed && "md:grid-cols-2"]}>
+    <div>
+      <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">{s.title ?? "Contact"}</h2>
+      {s.text && <p class="mt-3 max-w-xl text-lg text-ink-soft">{s.text}</p>}
+      <dl class="mt-8 space-y-4 text-lg">
+        {s.phone && <div><dt class="text-sm text-ink-soft">Telefon</dt><dd><a href={`tel:${s.phone.replace(/\s/g, "")}`} class="font-bold">{s.phone}</a></dd></div>}
+        {s.email && <div><dt class="text-sm text-ink-soft">Email</dt><dd><a href={`mailto:${s.email}`} class="font-bold">{s.email}</a></dd></div>}
+        {s.address && <div><dt class="text-sm text-ink-soft">Adresă</dt><dd>{s.address}</dd></div>}
+        {s.hours?.length && <div><dt class="text-sm text-ink-soft">Program</dt><dd>{s.hours.map((h) => <p>{h}</p>)}</dd></div>}
+      </dl>
+    </div>
+    {s.mapEmbed && <iframe src={s.mapEmbed} title="Hartă" class="min-h-80 w-full rounded-ui border border-rule" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>}
+  </div>
+</Section_>

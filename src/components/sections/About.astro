@@ -1,0 +1,16 @@
+---
+import type { Section } from "@/data/types";
+import Section_ from "./Section.astro";
+type P = Extract<Section, { type: "about" }>;
+const s = Astro.props as P;
+---
+<Section_ alt id="despre">
+  <div class:list={["grid gap-10", s.image?.src && "md:grid-cols-2 md:items-center"]}>
+    {s.image?.src && <img src={s.image.src} alt={s.image.alt ?? ""} class="aspect-[4/3] w-full rounded-ui object-cover" loading="lazy" />}
+    <div class="prose-measure">
+      <h2 class="text-3xl font-extrabold tracking-tight md:text-4xl">{s.title}</h2>
+      <div class="mt-5 text-lg leading-relaxed text-ink-soft">{s.paragraphs.map((p) => <p>{p}</p>)}</div>
+      {s.cta && <a href={s.cta.href} class="mt-6 inline-block font-bold text-accent underline underline-offset-4">{s.cta.label}</a>}
+    </div>
+  </div>
+</Section_>

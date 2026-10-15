@@ -1,0 +1,13 @@
+---
+import type { Section } from "@/data/types";
+import Section_ from "./Section.astro";
+import Heading from "./Heading.astro";
+type P = Extract<Section, { type: "gallery" }>;
+const s = Astro.props as P;
+---
+<Section_ id="galerie">
+  <Heading title={s.title} />
+  <ul class="grid grid-cols-2 gap-3 md:grid-cols-3 lg:grid-cols-4">
+    {s.images.map((im) => <li><img src={im.src} alt={im.alt ?? ""} class="aspect-square w-full rounded-ui object-cover" loading="lazy" /></li>)}
+  </ul>
+</Section_>

@@ -1,0 +1,29 @@
+{
+  "name": "demo-sites",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "extract": "node tools/extract.mjs",
+    "validate": "node tools/validate.mjs",
+    "use": "node tools/use.mjs",
+    "build:all": "node tools/build-all.mjs",
+    "build:one": "node tools/build-all.mjs"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/vite": "^4.3.3",
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1",
+    "astro": "^7.3.8",
+    "cheerio": "^1.2.0",
+    "tailwindcss": "^4.3.3"
+  },
+  "type": "module",
+  "private": true
+}

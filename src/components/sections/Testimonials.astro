@@ -1,0 +1,18 @@
+---
+import type { Section } from "@/data/types";
+import Section_ from "./Section.astro";
+import Heading from "./Heading.astro";
+type P = Extract<Section, { type: "testimonials" }>;
+const s = Astro.props as P;
+---
+<Section_ alt id="clienti">
+  <Heading title={s.title} />
+  <ul class="grid gap-6 md:grid-cols-2">
+    {s.items.map((t) => (
+      <li class="rounded-ui border border-rule bg-bg p-6">
+        <blockquote class="text-lg leading-relaxed">„{t.quote}”</blockquote>
+        {(t.author || t.role) && <p class="mt-4 text-sm font-semibold text-ink-soft">{t.author}{t.role && `, ${t.role}`}</p>}
+      </li>
+    ))}
+  </ul>
+</Section_>

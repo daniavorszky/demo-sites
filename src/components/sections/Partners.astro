@@ -1,0 +1,12 @@
+---
+import type { Section } from "@/data/types";
+import Section_ from "./Section.astro";
+type P = Extract<Section, { type: "partners" }>;
+const s = Astro.props as P;
+---
+<Section_ alt>
+  {s.title && <p class="mb-8 text-center font-semibold text-ink-soft">{s.title}</p>}
+  <ul class="flex flex-wrap items-center justify-center gap-x-12 gap-y-8">
+    {s.logos.map((l) => <li><img src={l.src} alt={l.alt ?? ""} class="h-10 w-auto opacity-80 grayscale" loading="lazy" /></li>)}
+  </ul>
+</Section_>

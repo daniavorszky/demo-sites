@@ -1,0 +1,29 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import home from "@/data/home.json";
+import type { Home } from "@/data/types";
+import Hero from "@/components/sections/Hero.astro";
+import Services from "@/components/sections/Services.astro";
+import About from "@/components/sections/About.astro";
+import LongText from "@/components/sections/LongText.astro";
+import List from "@/components/sections/List.astro";
+import Team from "@/components/sections/Team.astro";
+import Testimonials from "@/components/sections/Testimonials.astro";
+import Gallery from "@/components/sections/Gallery.astro";
+import Partners from "@/components/sections/Partners.astro";
+import Faq from "@/components/sections/Faq.astro";
+import Cta from "@/components/sections/Cta.astro";
+import Contact from "@/components/sections/Contact.astro";
+
+/* Pagina se compune din home.json: o secțiune apare doar dacă există în JSON.
+   Un tip nou de secțiune = un component nou + o linie aici. */
+const data = home as Home;
+const map = { hero: Hero, services: Services, about: About, longText: LongText, list: List, team: Team,
+  testimonials: Testimonials, gallery: Gallery, partners: Partners, faq: Faq, cta: Cta, contact: Contact } as const;
+---
+<Layout home={data}>
+  {data.sections.map((s) => {
+    const C = map[s.type as keyof typeof map];
+    return C ? <C {...(s as any)} /> : null;
+  })}
+</Layout>

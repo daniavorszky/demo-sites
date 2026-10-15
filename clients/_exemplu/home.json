@@ -1,0 +1,88 @@
+{
+  "site": {
+    "name": "Exemplu Contabilitate SRL",
+    "tagline": "Contabilitate și consultanță fiscală pentru firme mici",
+    "language": "ro",
+    "phone": "0254 000 000",
+    "email": "office@exemplu-contabilitate.ro",
+    "address": "Str. Exemplu nr. 1, Deva, Hunedoara",
+    "social": { "facebook": "https://facebook.com/exemplu" },
+    "skin": "calm"
+  },
+  "nav": [
+    { "label": "Servicii", "href": "#servicii" },
+    { "label": "Despre noi", "href": "#despre" },
+    { "label": "Întrebări", "href": "#intrebari" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "sections": [
+    {
+      "type": "hero",
+      "_source": "exemplu — fișier de test, înlocuit de mapare",
+      "title": "Contabilitate corectă, la timp, fără surprize la ANAF.",
+      "text": "Ținem evidența contabilă a firmei tale, depunem declarațiile și îți spunem din timp ce ai de plătit. Lucrăm cu SRL-uri, PFA-uri și cabinete din Hunedoara din 2009.",
+      "cta": { "label": "Cere o ofertă", "href": "#contact" },
+      "ctaSecondary": { "label": "Vezi serviciile", "href": "#servicii" }
+    },
+    {
+      "type": "services",
+      "title": "Ce facem pentru tine",
+      "items": [
+        { "title": "Evidență contabilă", "text": "Înregistrarea documentelor, balanțe lunare, bilanț anual." },
+        { "title": "Salarizare", "text": "State de plată, declarația 112, contracte și fișe de post în Revisal." },
+        { "title": "Consultanță fiscală", "text": "Alegerea formei de impozitare, optimizare legală, reprezentare la control." }
+      ]
+    },
+    {
+      "type": "about",
+      "title": "Despre noi",
+      "paragraphs": [
+        "Suntem un cabinet de contabilitate din Deva, cu trei contabili autorizați CECCAR și peste 60 de clienți activi."
+      ]
+    },
+    {
+      "type": "longText",
+      "title": "Cum lucrăm",
+      "paragraphs": [
+        "Fiecare client are un contabil dedicat, care cunoaște firma și răspunde la telefon. Documentele se trimit lunar, prin email sau prin aplicația noastră, iar până pe data de 20 primești situația cu ce ai de plătit.",
+        "Nu facem promisiuni pe care nu le putem ține. Dacă o situație fiscală este neclară, o spunem și cerem opinia scrisă a unui consultant înainte să acționăm."
+      ]
+    },
+    {
+      "type": "testimonials",
+      "title": "Ce spun clienții",
+      "items": [
+        { "quote": "De când lucrăm cu ei nu am mai avut nicio amendă. Răspund în aceeași zi.", "author": "M. Popescu", "role": "administrator, firmă de transport" },
+        { "quote": "Mi-au explicat pe înțelesul meu diferența dintre micro și impozit pe profit.", "author": "A. Ionescu", "role": "PFA" }
+      ]
+    },
+    {
+      "type": "faq",
+      "title": "Întrebări frecvente",
+      "items": [
+        { "q": "Cât costă?", "a": "Prețul depinde de numărul de documente și de angajați. Trimite-ne o descriere a firmei și primești o ofertă în 24 de ore." },
+        { "q": "Pot trece la voi în mijlocul anului?", "a": "Da. Preluăm evidența de la contabilul anterior și verificăm situația la zi înainte de a începe." }
+      ]
+    },
+    {
+      "type": "cta",
+      "title": "Hai să vorbim despre firma ta.",
+      "text": "Un telefon de 15 minute e suficient ca să-ți spunem dacă te putem ajuta.",
+      "button": { "label": "Sună-ne", "href": "tel:0254000000" }
+    },
+    {
+      "type": "contact",
+      "title": "Contact",
+      "phone": "0254 000 000",
+      "email": "office@exemplu-contabilitate.ro",
+      "address": "Str. Exemplu nr. 1, Deva, Hunedoara",
+      "hours": ["Luni–Vineri 9:00–17:00"]
+    }
+  ],
+  "source": {
+    "url": "https://exemplu-contabilitate.ro",
+    "extractedAt": "2026-10-15T00:00:00Z",
+    "notes": ["Fișier de exemplu pentru a verifica build-ul. Se înlocuiește integral de mapare."]
+  },
+  "demo": { "agency": "Digital Guild", "note": "Designul este o propunere; textele și pozele nu au fost modificate." }
+}

@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------
+   Skin-uri. Se aleg din home.json → site.skin: "calm" | "bold" | "warm".
+   Toate componentele folosesc DOAR aceste variabile, deci un skin nou
+   înseamnă un bloc nou aici, fără să atingi componentele.
+   ------------------------------------------------------------------ */
+:root,
+[data-skin="calm"] {
+  --bg: #fafaf7;
+  --bg-alt: #eef2ef;
+  --ink: #1c2b2a;
+  --ink-soft: #4b5a58;
+  --rule: #d6ddd9;
+  --accent: #1f6f8b;
+  --accent-ink: #ffffff;
+  --accent-soft: #e2eef3;
+  --font: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --radius: 10px;
+}
+
+[data-skin="bold"] {
+  --bg: #ffffff;
+  --bg-alt: #f3f1ec;
+  --ink: #141414;
+  --ink-soft: #5a5a5a;
+  --rule: #dcd8cf;
+  --accent: #b5421f;
+  --accent-ink: #ffffff;
+  --accent-soft: #f6e4dc;
+  --font: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --radius: 4px;
+}
+
+[data-skin="warm"] {
+  --bg: #fbf7f1;
+  --bg-alt: #f1e9dc;
+  --ink: #2a241c;
+  --ink-soft: #675c4e;
+  --rule: #e1d6c5;
+  --accent: #4a6b3a;
+  --accent-ink: #ffffff;
+  --accent-soft: #e4ecdc;
+  --font: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --radius: 14px;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-alt: var(--bg-alt);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-rule: var(--rule);
+  --color-accent: var(--accent);
+  --color-accent-ink: var(--accent-ink);
+  --color-accent-soft: var(--accent-soft);
+  --font-sans: var(--font);
+  --radius-ui: var(--radius);
+}
+
+html { background: var(--bg); color: var(--ink); font-family: var(--font); scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body { -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* Măsură de citire pentru text lung */
+.prose-measure { max-width: 68ch; }
+.prose-measure p + p { margin-top: 1em; }

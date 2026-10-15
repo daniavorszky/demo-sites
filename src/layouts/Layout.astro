@@ -1,0 +1,70 @@
+---
+import "@/styles/global.css";
+import type { Home } from "@/data/types";
+interface Props { home: Home }
+const { home } = Astro.props;
+const { site, nav } = home;
+const skin = site.skin ?? "calm";
+const title = site.name + (site.tagline ? ` — ${site.tagline}` : "");
+const contact = home.sections.find((s) => s.type === "contact") as any;
+const phone = site.phone ?? contact?.phone;
+const email = site.email ?? contact?.email;
+const address = site.address ?? contact?.address;
+---
+<!doctype html>
+<html lang={site.language ?? "ro"} data-skin={skin}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="robots" content="noindex, nofollow" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body class="min-h-screen bg-bg text-ink">
+    <header class="sticky top-0 z-20 border-b border-rule bg-bg/90 backdrop-blur">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-4">
+        <a href="#top" class="flex items-center gap-3 font-extrabold tracking-tight">
+          {site.logo ? <img src={site.logo} alt={site.name} class="h-9 w-auto" /> : <span class="text-lg">{site.name}</span>}
+        </a>
+        {nav.length > 0 && (
+          <nav aria-label="Meniu" class="hidden gap-6 text-sm font-medium text-ink-soft md:flex">
+            {nav.slice(0, 7).map((n) => <a href={n.href} class="hover:text-ink">{n.label}</a>)}
+          </nav>
+        )}
+        {phone && <a href={`tel:${phone.replace(/\s/g, "")}`} class="rounded-ui bg-accent px-4 py-2 text-sm font-bold text-accent-ink">{phone}</a>}
+      </div>
+    </header>
+
+    <main id="top">
+      <slot />
+    </main>
+
+    <footer class="mt-24 border-t border-rule bg-bg-alt">
+      <div class="mx-auto grid max-w-6xl gap-8 px-5 py-12 md:grid-cols-3">
+        <div>
+          <p class="text-lg font-extrabold">{site.name}</p>
+          {site.tagline && <p class="mt-1 text-ink-soft">{site.tagline}</p>}
+        </div>
+        <div class="text-sm text-ink-soft">
+          {address && <p>{address}</p>}
+          {phone && <p class="mt-1"><a href={`tel:${phone.replace(/\s/g, "")}`}>{phone}</a></p>}
+          {email && <p class="mt-1"><a href={`mailto:${email}`}>{email}</a></p>}
+        </div>
+        {site.social && Object.keys(site.social).length > 0 && (
+          <div class="flex flex-wrap gap-4 text-sm font-medium md:justify-end">
+            {Object.entries(site.social).map(([k, v]) => <a href={v} class="capitalize hover:text-accent">{k}</a>)}
+          </div>
+        )}
+      </div>
+      <div class="border-t border-rule">
+        <p class="mx-auto max-w-6xl px-5 py-4 text-xs text-ink-soft">
+          Demo pregătit de {home.demo?.agency ?? "agenția noastră"}. Conținutul este cel de pe site-ul actual, neschimbat
+          {home.source?.url && <> (<a href={home.source.url} class="underline">{home.source.url.replace(/^https?:\/\//, "")}</a>)</>}.
+          {home.demo?.note && <> {home.demo.note}</>}
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+---
+import type { Section } from "@/data/types";
+type P = Extract<Section, { type: "hero" }>;
+const s = Astro.props as P;
+const hasImg = !!s.image?.src;
+---
+<section class="border-b border-rule">
+  <div class:list={["mx-auto max-w-6xl px-5 py-20 md:py-28", hasImg && "grid items-center gap-12 md:grid-cols-[1.15fr_1fr]"]}>
+    <div class="max-w-3xl">
+      {s.subtitle && <p class="mb-4 text-base font-semibold text-accent">{s.subtitle}</p>}
+      <h1 class="text-4xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">{s.title}</h1>
+      {s.text && <p class="mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft md:text-xl">{s.text}</p>}
+      {(s.cta || s.ctaSecondary) && (
+        <div class="mt-8 flex flex-wrap gap-3">
+          {s.cta && <a href={s.cta.href} class="rounded-ui bg-accent px-6 py-3 font-bold text-accent-ink">{s.cta.label}</a>}
+          {s.ctaSecondary && <a href={s.ctaSecondary.href} class="rounded-ui border border-rule px-6 py-3 font-bold">{s.ctaSecondary.label}</a>}
+        </div>
+      )}
+    </div>
+    {hasImg && (
+      <img src={s.image!.src} alt={s.image!.alt ?? ""} width={s.image!.width} height={s.image!.height}
+        class="aspect-[4/3] w-full rounded-ui object-cover" loading="eager" />
+    )}
+  </div>
+</section>

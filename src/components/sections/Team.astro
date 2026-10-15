@@ -1,0 +1,20 @@
+---
+import type { Section } from "@/data/types";
+import Section_ from "./Section.astro";
+import Heading from "./Heading.astro";
+type P = Extract<Section, { type: "team" }>;
+const s = Astro.props as P;
+---
+<Section_ id="echipa">
+  <Heading title={s.title} intro={s.intro} />
+  <ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+    {s.members.map((m) => (
+      <li>
+        {m.image?.src && <img src={m.image.src} alt={m.name} class="mb-4 aspect-square w-full rounded-ui object-cover" loading="lazy" />}
+        <p class="text-lg font-bold">{m.name}</p>
+        {m.role && <p class="text-accent">{m.role}</p>}
+        {m.text && <p class="mt-2 text-sm text-ink-soft">{m.text}</p>}
+      </li>
+    ))}
+  </ul>
+</Section_>
